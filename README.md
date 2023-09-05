@@ -26,7 +26,7 @@
     <button>I'm blue</button>
 </div>
 ```
-Get a taste- see the [Live Example](https://gnat.github.io/css-scope-inline/example.html)! Then [view source](https://gnat.github.io/css-scope-inline/blob/main/example.html).
+Get a taste- see the [Live Example](https://gnat.github.io/css-scope-inline/example.html)! Then [view source](https://github.com/gnat/css-scope-inline/blob/main/example.html).
 
 ## 🌘 How does it work?
 
