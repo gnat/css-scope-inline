@@ -12,6 +12,7 @@ Get an inline Tailwind esque experience in vanilla CSS. Try this if you:
 * Wish to co-locate your CSS inline for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * Really wish `this` would work in `<style>` tags.
 * No build step. Dependency-free.
+* ~20 lines is infinitely maintainable.
 * Pairs well with [Surreal](https://github.com/gnat/surreal) and [htmx](https://htmx.org)
 * Want fewer layers, less complexity. Are aware of the cargo cult. ✈️
 
@@ -24,13 +25,20 @@ Get an inline Tailwind esque experience in vanilla CSS. Try this if you:
         .self { background: red; }
         .self button { background: blue; }
     </style>
-    <button>Hello</button>
+    <button>I'm blue</button>
 </div>
 ```
 Get a taste- see the [Live Example](https://gnat.github.io/css-scope-inline/example.html)! Then [view source](https://github.com/gnat/css-scope-inline/blob/main/example.html).
 
 ## 🌘 How does it work?
 
-This uses `MutationObserver` to monitor the DOM, and the moment a `<style>` tag is seen, it scopes the styles to whatever the parent element is. No popping. 
+This uses `MutationObserver` to monitor the DOM, and the moment a `<style>` tag is seen, it scopes the styles to whatever the parent element is. No flashing or popping. 
 
-No suffering from FOUC (a flash of unstyled content) as experienced in Tailwind CDN, Twind, UnoCSS.
+## 🤔 Why consider this over Tailwind CSS?
+
+Use whatever you'd like, but there's a few advantages with this approach:
+
+* No suffering from FOUC (a flash of unstyled content) as experienced in Tailwind CDN, Twind, UnoCSS.
+* No high risk of eventually requiring a build step. It just works.
+* No [deprecations](https://windicss.org/posts/sunsetting.html).
+* Universal vanilla CSS. No special syntax or plugins to install.
