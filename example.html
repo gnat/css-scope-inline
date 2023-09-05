@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>🌘 CSS Scope Inline Test Page</title>
+		<!-- Optionally, use externally! <script src="script.js"></script> -->
 		<script>
 			// 🌘 CSS Scope Inline (https://github.com/gnat/css-scope-inline)
 			var cssScopeCount = 1
@@ -19,77 +20,82 @@
 				}
 			}).observe(document.documentElement, {childList: true, subtree: true})
 		</script>
-		<!-- Optionally, use as a script! <script src="script.js"></script> -->
 		<style>
-			html, body { background: #444; } /* Prevent flashbang. */
+			:root {
+				--c-button: hsl(0 50% 20% / 100%);
+				--c-button-hover: hsl(0 50% 40% / 100%);
+			}
+			html, body { background: #222; color: #ccc; font-size: 20px; } /* Prevent flashbang. */
+			button {
+				border-radius: 10px;
+				padding: 10px 16px;
+				font-size: 20px;
+				border: 0;
+				cursor: pointer;
+				background: var(--c-button);
+				color: #888;
+			}
+			button:hover {
+				background: var(--c-button-hover);
+			}
 		</style>
 	</head>
 	<body>
 		<div>
 			<h1>👻 Unstyled div.</h1>
 			<ol>
-				<li>Unstyled div item.
-				<li>Unstyled div item.
+				<li>Unstyled item.
+				<li>Unstyled item.
 			</ol>
 		</div>
 
 		<div>
 			<style>
-				.this{
+				.this { /* ✨ .this is where the magic happens. */
 					border:none;
 					font-family: Noto Sans, sans-serif;
 					border-radius: 5px;
-					box-shadow: 2px 2px 5px rgba( 30,30,30,.5 );
+					box-shadow: 2px 2px 5px #00000044;
 					padding:10px 20px;
-				}
-				html .this {
-					& .lol {
+					background: hsl(220 20% 50% / 100%);
+
+					& ul, ol { /* ✨ CSS Nesting works! */
+						padding: 5px 0;
+					}
+					& span { /* ✨ CSS Nesting works! */
 						background: purple;
 					}
 				}
-				.this,
-				.this h1,
-				.this li,
-				.this ul,
-				.this ol,
-				.this p{
-					background:red;
-					border:none;
-					color:#000
-				}
-				h1{
-					font-size:16px;
-					line-height:2em;
-					padding: 0;
-				}
 				li{
 					list-style: disc inside;
-					padding: 3px 3px 3px 10px;
-					border-bottom: 1px solid #e0e0e0;
+					padding: 3px;
+					padding-right: 10px;
+					border-radius: 20px;
+					border-radius: 20px;
 				}
-				ul, ol{
-					padding:5px;
+				.me ol li:nth-child(3) { /* ✨ .me is interchangeable! */
+					background: hsl(220 50% 50% / 100%);
 				}
-				p{
-					margin: 1em 0;
+				.self ol li:nth-child(4) { /* ✨ .self is interchangeable! */
+					background: hsl(220 80% 50% / 100%);
 				}
-				.this a {
-					display: inline-block;
-					border-radius: 10px;
-					padding: 10px;
-					background: blue;
-					color: white;
-					text-decoration: none;
+				h1 {
+					font-size: 16px;
+					line-height: 16px;
+					padding: 0;
 				}
 			</style>
-			<h1>😺 Styled div.</h1>
+			<h1>🎃 Styled div using .this</h1>
 			<ol>
 				<li>First styled item.
-				<li>Second styled item.
+				<li>Second styled item and <span>modern nested CSS</span>.
+				<li>👽 Using .me
+				<li>💀 Using .self
 			</ol>
-			<br />
-			<a href="https://github.com/gnat/css-scope-inline/blob/main/example.html" target="_blank">😺 Visit the source code for this page.</a>
 		</div>
+
 		<br />
+		<button onClick="window.open('https://github.com/gnat/css-scope-inline/blob/main/example.html');">😺 Visit the source code for this page.</button>
 	</body>
 </html>
+
