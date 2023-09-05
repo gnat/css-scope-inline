@@ -1,11 +1,95 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<title>Inline Scoped CSS Test Page</title>
+		<title>🌘 CSS Scope Inline Test Page</title>
+		<script>
+			// 🌘 CSS Scope Inline (https://github.com/gnat/css-scope-inline)
+			var cssScopeCount = 1
+			new MutationObserver((mutations, observer) => {
+				for (var mutation of mutations) {
+					if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+						var addedNode = mutation.addedNodes[0]
+						if (addedNode.nodeName !== 'STYLE') continue // Not a <style>
+						if (!addedNode.parentNode || addedNode.parentNode?.tagName === 'HEAD') continue // Must have parent. Don't style <head>
+						cssScopeCount++ // Ready.
+						addedNode.parentNode.classList.add('self_'+cssScopeCount) // Make unique scope, example: .self_1234
+						var pattern = new RegExp('(\.this|\.self|\.me)(?![A-Za-z0-9\_\-])', 'g') // Can use: .this .self .me
+						addedNode.textContent = addedNode.textContent.replace(pattern, '.self_'+cssScopeCount)
+					}
+				}
+			}).observe(document.documentElement, {childList: true, subtree: true})
+		</script>
+		<!-- Optionally, use as a script! <script src="script.js"></script> -->
+		<style>
+			html, body { background: #444; } /* Prevent flashbang. */
+		</style>
 	</head>
 	<body>
-	<script>
-	
-	</script>
+		<div>
+			<h1>👻 Unstyled div.</h1>
+			<ol>
+				<li>Unstyled div item.
+				<li>Unstyled div item.
+			</ol>
+		</div>
+
+		<div>
+			<style>
+				.this{
+					border:none;
+					font-family: Noto Sans, sans-serif;
+					border-radius: 5px;
+					box-shadow: 2px 2px 5px rgba( 30,30,30,.5 );
+					padding:10px 20px;
+				}
+				html .this {
+					& .lol {
+						background: purple;
+					}
+				}
+				.this,
+				.this h1,
+				.this li,
+				.this ul,
+				.this ol,
+				.this p{
+					background:red;
+					border:none;
+					color:#000
+				}
+				h1{
+					font-size:16px;
+					line-height:2em;
+					padding: 0;
+				}
+				li{
+					list-style: disc inside;
+					padding: 3px 3px 3px 10px;
+					border-bottom: 1px solid #e0e0e0;
+				}
+				ul, ol{
+					padding:5px;
+				}
+				p{
+					margin: 1em 0;
+				}
+				.this a {
+					display: inline-block;
+					border-radius: 10px;
+					padding: 10px;
+					background: blue;
+					color: white;
+					text-decoration: none;
+				}
+			</style>
+			<h1>😺 Styled div.</h1>
+			<ol>
+				<li>First styled item.
+				<li>Second styled item.
+			</ol>
+			<br />
+			<a href="https://github.com/gnat/css-scope-inline/blob/main/example.html" target="_blank">😺 Visit the source code for this page.</a>
+		</div>
+		<br />
 	</body>
 </html>
