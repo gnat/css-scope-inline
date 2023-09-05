@@ -5,12 +5,12 @@
 
 ## Why does this exist?
 
-* You want a Tailwind esque experience in pure vanilla CSS.
+* You want an easy inline vanilla CSS experience without Tailwind CSS.
 * Hate typing individual class and id selectors over.. and over..
 * Wish to co-locate your `<style>` tags for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * Really wish `this` would work in `<style>` tags.
-* Works with all new features including [CSS Nesting](https://caniuse.com/css-nesting)!
-* No build step. Dependency-free. ~20 lines
+* Want access to all new features including [CSS Nesting](https://caniuse.com/css-nesting) and animations.
+* No build step. Dependency-free. Only 15 lines!
 * Pairs well with [Surreal](https://github.com/gnat/surreal) and [htmx](https://htmx.org)
 * Want fewer layers, less complexity. Are aware of the cargo cult. ✈️
 
@@ -20,7 +20,7 @@
 ```html
 <div>
     <style>
-        .this { background: red; } /* .self and .me also work! ✨ */
+        .this { background: red; } /* ✨ .self and .me also work! */
         .this button { background: blue; }
     </style>
     <button>I'm blue</button>
@@ -40,5 +40,5 @@ Use whatever you'd like, but there's a few advantages with this approach:
 
 * No suffering from FOUC (a flash of unstyled content) as experienced in Tailwind CDN, Twind, UnoCSS.
 * No high risk of eventually requiring a build step. It just works.
-* No [deprecations](https://windicss.org/posts/sunsetting.html).
-* Universal vanilla CSS. No special syntax or plugins to install.
+* No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 15 lines is infinitely maintainable.
+* Universal vanilla CSS. No special syntax or editor plugins to install.
