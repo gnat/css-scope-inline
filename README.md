@@ -9,6 +9,7 @@
 * Hate typing individual class and id selectors over.. and over..
 * Wish to co-locate your `<style>` tags for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * Really wish `this` would work in `<style>` tags.
+* Works with all new features including [CSS Nesting](https://caniuse.com/css-nesting)!
 * No build step. Dependency-free. ~20 lines
 * Pairs well with [Surreal](https://github.com/gnat/surreal) and [htmx](https://htmx.org)
 * Want fewer layers, less complexity. Are aware of the cargo cult. ✈️
@@ -19,7 +20,7 @@
 ```html
 <div>
     <style>
-        .this { background: red; }
+        .this { background: red; } /* .self and .me also work! ✨ */
         .this button { background: blue; }
     </style>
     <button>I'm blue</button>
@@ -30,6 +31,8 @@ Get a taste- see the [Live Example](https://gnat.github.io/css-scope-inline/exam
 ## 🌘 How does it work?
 
 This uses `MutationObserver` to monitor the DOM, and the moment a `<style>` tag is seen, it scopes the styles to whatever the parent element is. No flashing or popping. 
+
+This method also leaves your existing styles untouched, allowing you to mix and match at your liesure.
 
 ## 🤔 Why consider this over Tailwind CSS?
 
