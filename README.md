@@ -5,11 +5,9 @@
 
 ## Why does this exist?
 
-Get an inline Tailwind esque experience in vanilla CSS. Try this if you:
-
-* Want to stay close to vanilla CSS.
+* You want a Tailwind style experience in pure vanilla CSS.
 * Hate typing individual class and id selectors over.. and over..
-* Wish to co-locate your CSS inline for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
+* Wish to co-locate your `<style>` tags for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * Really wish `this` would work in `<style>` tags.
 * No build step. Dependency-free. ~20 lines
 * Pairs well with [Surreal](https://github.com/gnat/surreal) and [htmx](https://htmx.org)
@@ -21,8 +19,8 @@ Get an inline Tailwind esque experience in vanilla CSS. Try this if you:
 ```html
 <div>
     <style>
-        .self { background: red; }
-        .self button { background: blue; }
+        .this { background: red; }
+        .this button { background: blue; }
     </style>
     <button>I'm blue</button>
 </div>
