@@ -11,8 +11,7 @@ Get an inline Tailwind esque experience in vanilla CSS. Try this if you:
 * Hate typing individual class and id selectors over.. and over..
 * Wish to co-locate your CSS inline for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * Really wish `this` would work in `<style>` tags.
-* No build step. Dependency-free.
-* ~20 lines is infinitely maintainable.
+* No build step. Dependency-free. ~20 lines
 * Pairs well with [Surreal](https://github.com/gnat/surreal) and [htmx](https://htmx.org)
 * Want fewer layers, less complexity. Are aware of the cargo cult. ✈️
 
