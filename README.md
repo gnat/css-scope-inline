@@ -5,7 +5,7 @@
 
 ## Why does this exist?
 
-* You want a Tailwind style experience in pure vanilla CSS.
+* You want a Tailwind esque experience in pure vanilla CSS.
 * Hate typing individual class and id selectors over.. and over..
 * Wish to co-locate your `<style>` tags for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * Really wish `this` would work in `<style>` tags.
