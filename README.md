@@ -1,4 +1,4 @@
-# CSS Scope Inline
+# 🌘 CSS Scope Inline
 
 ![cover](https://github.com/gnat/css-scope-inline/assets/24665/9fb44515-7076-4349-94b5-11aa10bedf9a)
 (Art by [shahabalizadeh](https://www.artstation.com/artwork/zDgdd))
