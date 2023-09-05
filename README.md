@@ -28,3 +28,9 @@ Get an inline Tailwind esque experience in vanilla CSS. Try this if you:
 </div>
 ```
 Get a taste- see the [Live Example](https://gnat.github.io/css-scope-inline/example.html)! Then [view source](https://github.com/gnat/css-scope-inline/blob/main/example.html).
+
+## 🌘 How does it work?
+
+This uses `MutationObserver` to monitor the DOM, and the moment a `<style>` tag is seen, it scopes the styles to whatever the parent element is. No popping. 
+
+No suffering from FOUC (a flash of unstyled content) as experienced in Tailwind CDN, Twind, UnoCSS.
