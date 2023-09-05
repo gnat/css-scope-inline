@@ -16,3 +16,15 @@ Get an inline Tailwind esque experience in vanilla CSS. Try this if you:
 * Want fewer layers, less complexity. Are aware of the cargo cult. ✈️
 
 ✨ Want to also inline scope your `<script>` tags? See our companion project, [Surreal](https://github.com/gnat/surreal)
+
+## 👁️ How does it look?
+```html
+<div>
+    <style>
+        .self { background: red; }
+        .self button { background: blue; }
+    </style>
+    <button>Hello</button>
+</div>
+```
+Get a taste- see the [Live Example](https://gnat.github.io/css-scope-inline/example.html)! Then [view source](https://github.com/gnat/css-scope-inline/blob/main/example.html).
