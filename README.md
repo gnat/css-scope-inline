@@ -41,4 +41,4 @@ Use whatever you'd like, but there's a few advantages with this approach:
 * Universal vanilla CSS. No special syntax or plugins to install.
 
 ## 📚️ Inspired by
-* [style scoped](https://caniuse.com/style-scoped) 🪦 RIP
+* [<style scoped>](https://caniuse.com/style-scoped)
