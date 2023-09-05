@@ -1,6 +1,6 @@
 # 🌘 CSS Scope Inline
 
-![cover](https://github.com/gnat/css-scope-inline/assets/24665/9fb44515-7076-4349-94b5-11aa10bedf9a)
+![cover](https://github.com/gnat/css-scope-inline/assets/24665/c4935c1b-34e3-4220-9d42-11f064999a57)
 (Art by [shahabalizadeh](https://www.artstation.com/artwork/zDgdd))
 
 ## Why does this exist?
