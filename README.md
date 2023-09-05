@@ -5,9 +5,7 @@
 
 ## Why does this exist?
 
-Get an inline Tailwind esque experience in vanilla CSS.
-
-If you agree with any of the following, you may appreciate this script:
+Get an inline Tailwind esque experience in vanilla CSS. Try this if you:
 
 * Want to stay close to vanilla CSS.
 * Hate typing individual class and id names over.. and over..
