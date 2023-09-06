@@ -4,10 +4,6 @@
 		<title>🌘 CSS Scope Inline Test Page</title>
 		<script src="script.js"></script>
 		<style>
-			:root {
-				--c-button: hsl(0 50% 20% / 100%);
-				--c-button-hover: hsl(0 50% 40% / 100%);
-			}
 			html, body { background: #222; color: #ccc; font-size: 20px; } /* Prevent flashbang. */
 			button {
 				border-radius: 10px;
@@ -59,11 +55,13 @@
 						background: purple;
 					}
 				}
-				li{
+				.this h1 {
+					font-size: 20px;
+				}
+				.this li{
 					list-style: disc inside;
 					padding: 3px;
 					padding-right: 10px;
-					border-radius: 20px;
 					border-radius: 20px;
 				}
 				.me ol li:nth-child(3) { /* ✨ .me is interchangeable! */
@@ -71,11 +69,6 @@
 				}
 				.self ol li:nth-child(4) { /* ✨ .self is interchangeable! */
 					background: hsl(220 80% 50% / 100%);
-				}
-				h1 {
-					font-size: 16px;
-					line-height: 16px;
-					padding: 0;
 				}
 			</style>
 			<h1>🎃 Styled div using .this</h1>
