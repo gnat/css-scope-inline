@@ -10,6 +10,7 @@
 * Wish to co-locate your `<style>` tags for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * Really wish `this` would work in `<style>` tags.
 * Want access to all new features including [CSS Nesting](https://caniuse.com/css-nesting) and animations.
+* Want to retain the ability to copy + paste CSS from your inspector.
 * No build step. Dependency-free. Only 15 lines!
 * Pairs well with [Surreal](https://github.com/gnat/surreal) and [htmx](https://htmx.org)
 * Want fewer layers, less complexity. Are aware of the cargo cult. ✈️
