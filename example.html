@@ -4,17 +4,34 @@
 		<title>🌘 CSS Scope Inline Test Page</title>
 		<script src="script.js"></script>
 		<style>
-			html, body { background: #222; color: #ccc; font-size: 20px; }
+			*,*::before,*::after{ margin: 0; padding: 0; } /* Reset */
+			button,input,select,textarea { margin: 0; font: inherit; }
+			html {
+				font-size: 10px; /* Usage: 1.8 rem = 18px */
+				text-size-adjust: none; /* Fixes chrome on mobile. */
+				-webkit-text-size-adjust: none; /* Fixes safari on mobile. */
+				background: #222;
+				color: #ccc;
+			}
+			body { font-size: 2rem; }
 			button {
-				border-radius: 10px;
-				padding: 10px 16px;
-				font-size: 20px;
-				border: 0;
 				cursor: pointer;
-				background: hsl(0 50% 20% / 100%);
-				color: hsl(0 0% 60% / 100%);
+				color: #fff;
+				padding: 2rem 3rem;
+				margin: 2rem;
+				border: 0;
+				background: hsl(345 100% 47%);
+				border-bottom: 0.5rem solid hsl(345 100% 28%);
+				border-radius: 12px;
+				text-shadow: 0 2px #222222AA;
+				transition: background 1s;
 				&:hover {
-					background: hsl(0 50% 40% / 100%);
+					background: hsl(345 100% 60% / 100%);
+					transition: background 1s;
+
+				}
+				&:active {
+					transform: translateY(0.2rem);
 				}
 			}
 		</style>
@@ -31,53 +48,63 @@
 		<div>
 			<style>
 				/* Dead simple example. */
-				.this { width: fit-content; }
-				.this div { background: darkred; }
+				.me { margin: 10px; }
+				.me div { display: inline; font-size: 3rem; filter: sepia(100%) hue-rotate(60deg) saturate(200%); }
 			</style>
 			<div>🪦</div>
 		</div>
-		<br />
 
 		<div>
 			<style>
-				.this { /* ✨ .this is where the magic happens. */
-					border:none;
+				.me {
 					font-family: Noto Sans, sans-serif;
-					border-radius: 5px;
+					background: hsl(260 62% 20% / 100%);
+					border:none;
+					border-radius: 12px;
 					box-shadow: 2px 2px 5px #00000044;
 					padding:10px 20px;
-					background: hsl(220 20% 50% / 100%);
+					color: #fff;
+					margin: 20px;
 					& ul, ol { /* CSS Nesting works! */
 						padding: 5px 0;
 					}
 					& span { /* CSS Nesting works! */
-						background: purple;
+						background: hsl(300 80% 24%);
+						padding: 12px;
+						border-radius: 4px;
+						&::before { content:'🔮'; padding: 0 4px 0 0; }
 					}
 				}
-				.this h1, .this h2, .this h3 { font-size: 20px; }
-				.this li{
-					list-style: disc inside;
-					padding: 3px 3px 3px 3px;
-					padding-right: 10px;
-					border-radius: 20px;
+				.me li{
+					list-style: disc;
+					padding: 4px;
+					border-radius: 12px;
+					margin: 4px 20px;
 				}
-				.me ol li:nth-child(3) { /* ✨ .me is an alias! */
-					background: hsl(220 50% 50% / 100%);
+				.this ol li:nth-child(2) { /* ✨ .this is an alias! */
+					background: hsl(260 50% 50% / 100%);
 				}
-				.self ol li:nth-child(4) { /* ✨ .self is an alias! */
-					background: hsl(220 80% 50% / 100%);
+				.self ol li:nth-child(3) { /* ✨ .self is an alias! */
+					background: hsl(260 80% 50% / 100%);
+				}
+				h1, h2, h3 { font-size: 3rem; margin: 10px; } /* Global CSS syntax works as normal. */
+				.me { animation: bounce 4s ease-in-out infinite; }
+				@keyframes bounce {
+					0% { transform: translateY(0px); }
+					50% { transform: translateY(20px); }
+					100% {  transform: translateY(0px); }
 				}
 			</style>
-			<h1>🎃 Styled div using .this</h1>
+			<h1>🎃 Styled div using .me</h1>
 			<ol>
-				<li>First styled item.
-				<li>Second styled item and <span>modern nested CSS</span>.
-				<li>👽 Using .me
+				<li>Use modern <span> nested CSS</span>
+				<li>👽 Using .this
 				<li>💀 Using .self
 			</ol>
 		</div>
 
 		<br />
-		<button onClick="window.open('https://github.com/gnat/css-scope-inline/blob/main/example.html');">😺 Visit the source code for this page.</button>
+		<button onClick="window.open('https://github.com/gnat/css-scope-inline/blob/main/example.html');" style="font-family: sans-serif;">😺 Visit the source code for this page.</button>
 	</body>
 </html>
+
