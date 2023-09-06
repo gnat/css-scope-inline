@@ -9,7 +9,7 @@
 * Hate typing individual class selectors and ids over.. and over..
 * You want to co-locate your `<style>` tags for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * You wish `this` would work in `<style>` tags.
-* Want access to all new features including [CSS Nesting](https://caniuse.com/css-nesting) and animations.
+* Access to all features including [CSS Nesting](https://caniuse.com/css-nesting) and animations.
 * No build step. Dependency-free. Only 15 lines!
 * Pairs well with [Surreal](https://github.com/gnat/surreal) and [htmx](https://htmx.org)
 * Want fewer layers, less complexity. Are aware of the cargo cult. ✈️
@@ -41,5 +41,5 @@ Use whatever you'd like, but there's a few advantages with this approach:
 * No suffering from FOUC (a flash of unstyled content) as experienced in Tailwind CDN, Twind, UnoCSS.
 * No high risk of eventually requiring a build step. It just works.
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 15 lines is infinitely maintainable.
-* Use the browser inspector to edit / copy / paste styles.
+* Use the browser inspector to live edit / copy / paste styles.
 * Universal vanilla CSS. No special syntax or editor plugins to install.
