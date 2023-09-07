@@ -6,7 +6,7 @@
 ## Why does this exist?
 
 * You want an easy inline vanilla CSS experience without Tailwind CSS.
-* Hate typing individual class selectors and ids over.. and over..
+* Hate naming unique class selectors and ids over.. and over..
 * You want to co-locate your `<style>` tags for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * You wish `this` would work in `<style>` tags.
 * Use all CSS features: [Nesting](https://caniuse.com/css-nesting), animations. Scoped [`@keyframes`](https://github.com/gnat/css-scope-inline/blob/main/example.html#L86) for free!
