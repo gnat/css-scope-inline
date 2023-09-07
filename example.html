@@ -2,14 +2,14 @@
 <html>
 	<head>
 		<title>🌘 CSS Scope Inline Test Page</title>
-		<script src="script.js"></script> <!-- ... or just add it inline! -->
+		<script src="script.js"></script> <!-- ... or add as inline <script> ! -->
 		<style>
 			*,*::before,*::after{ margin: 0; box-sizing: border-box; } /* Reset */
 			html {
-				font-size: 10px; /* Root size. Usage: 1.8 rem = 18px */
-				text-size-adjust: none; /* Reset auto-sizing. */
-				-webkit-text-size-adjust: none; /* Fixes safari on mobile. */
-				background: #222; /* Prevent flash. */
+				font-size: 10px; /* Root size. Usage: 1.8rem = 18px (1rem = 10px) */
+				text-size-adjust: none; /* Reset auto size. */
+				-webkit-text-size-adjust: none; /* Fix safari. */
+				background: #222;
 				color: #ccc;
 			}
 			body {
@@ -17,15 +17,15 @@
 			}
 			button {
 				font-size: 2rem;
-				padding: 2rem 2.4rem;
-				margin: 2rem;
 				cursor: pointer;
 				color: #fff;
+				text-shadow: 0 2px #000000AA;
+				padding: 2rem 2.4rem;
+				margin: 2rem;
 				background: hsl(345 100% 47%);
 				border: 0;
 				border-bottom: 0.5rem solid hsl(345 100% 28%);
 				border-radius: 12px;
-				text-shadow: 0 2px #000000AA;
 				transition: all 0.3s;
 				&:hover {
 					background: hsl(345 100% 60%);
@@ -42,7 +42,7 @@
 
 		<div>
 			<style> /* Simple example. */
-				.me { margin: 10px; }
+				.me { margin: 20px; }
 				.me div { font-size: 5rem; }
 			</style>
 			<div>👻</div>
@@ -51,7 +51,7 @@
 		<div>
 			<style>
 				.me {
-					font-family: Noto Sans, sans-serif;
+					font-family: 'Noto Sans', sans-serif;
 					background: hsl(264 62% 20%);
 					border:none;
 					border-radius: 12px;
@@ -83,13 +83,13 @@
 				.self ol li:nth-child(3) { /* ✨ .self is an alias! */
 					background: hsl(264 80% 50%);
 				}
-				@keyframes \.me { /* Looped animation @keyframes can be scoped using \ */
+				@keyframes \.me { /* ♻️ Looped animation @keyframes can be scoped using \ */
 					0% { transform: translateY(0px); }
 					50% { transform: translateY(20px); }
 					100% {  transform: translateY(0px); }
 				}
 				.me { animation: \.me 4s ease-in-out infinite; }
-				h1, h2, h3 { font-size: 3rem; margin: 10px; } /* Global CSS syntax works untouched. */
+				h1, h2, h3 { font-size: 3rem; margin: 10px; } /* Normal global CSS works untouched! */
 			</style>
 			<h1>🛸 Scoped style using .me</h1>
 			<ol>
@@ -99,6 +99,6 @@
 				<li>⚡ Use live editing in the browser inspector to speed up your workflow, again!
 			</ol>
 		</div>
-		<button onClick="window.open('https://github.com/gnat/css-scope-inline/blob/main/example.html');" style="font-weight: bold; font-family: sans-serif;">🐱 Visit the source code for this page.</button>
+		<button onClick="window.open('https://github.com/gnat/css-scope-inline/blob/main/example.html');" style="font-weight: bold; font-family: sans-serif;">🐱 View code for this page.</button>
 	</body>
 </html>
