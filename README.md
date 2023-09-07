@@ -6,9 +6,10 @@
 ## Why does this exist?
 
 * You want an easy inline vanilla CSS experience without Tailwind CSS.
-* Hate creating unique class names over.. and over.. only to use them once.
+* Hate creating unique class names over and over.. only to use them once.
 * You want to co-locate your styles for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * You wish `this` would work in `<style>` tags.
+* You want the ultra-fast "inspect, play with styles, paste" workflow back.
 * Use all CSS features: [Nesting](https://caniuse.com/css-nesting), animations. Scoped [`@keyframes`](https://github.com/gnat/css-scope-inline/blob/main/example.html#L86) for free!
 * Only 15 lines. No build step. No dependencies.
 * Pairs well with [htmx](https://htmx.org) and [Surreal](https://github.com/gnat/surreal)
