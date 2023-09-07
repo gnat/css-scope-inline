@@ -2,33 +2,34 @@
 <html>
 	<head>
 		<title>🌘 CSS Scope Inline Test Page</title>
-		<script src="script.js"></script>
+		<script src="script.js"></script> <!-- ... or just add it inline! -->
 		<style>
 			*,*::before,*::after{ margin: 0; box-sizing: border-box; } /* Reset */
-			button,input,select,textarea { font: inherit; }
+			button,input,select,textarea { font: inherit; } /* Prevent custom font on these. */
 			html {
-				font-size: 10px; /* Usage: 1.8 rem = 18px */
-				text-size-adjust: none; /* Fixes chrome on mobile. */
+				font-size: 10px; /* Root size. Usage: 1.8 rem = 18px */
+				text-size-adjust: none; /* Reset auto-sizing. */
 				-webkit-text-size-adjust: none; /* Fixes safari on mobile. */
-				background: #222;
+				background: #222; /* Prevent flash. */
 				color: #ccc;
 			}
-			body { font-size: 2rem; }
+			body {
+				font-size: 2rem; /* 2rem = 20px in our setup. */
+			}
 			button {
+				padding: 2rem 2.4rem;
+				margin: 2rem;
 				cursor: pointer;
 				color: #fff;
-				padding: 2rem 3rem;
-				margin: 2rem;
-				border: 0;
 				background: hsl(345 100% 47%);
+				border: 0;
 				border-bottom: 0.5rem solid hsl(345 100% 28%);
 				border-radius: 12px;
-				text-shadow: 0 2px #222222AA;
-				transition: background 1s;
+				text-shadow: 0 2px #000000AA;
+				transition: all 0.3s;
 				&:hover {
-					background: hsl(345 100% 60% / 100%);
-					transition: background 1s;
-
+					background: hsl(345 100% 60%);
+					transform: translateY(-0.2rem);
 				}
 				&:active {
 					transform: translateY(0.2rem);
@@ -37,37 +38,37 @@
 		</style>
 	</head>
 	<body>
-		<div>
-			👻 No style.
-		</div>
+		<div>💩 No style.</div>
 
 		<div>
-			<style>
+			<style> /* Simple example. */
 				.me { margin: 10px; }
 				.me div { font-size: 5rem; }
 			</style>
-			<div>🪦</div>
+			<div>👻</div>
 		</div>
 
 		<div>
 			<style>
 				.me {
 					font-family: Noto Sans, sans-serif;
-					background: hsl(260 62% 20% / 100%);
+					background: hsl(264 62% 20%);
 					border:none;
 					border-radius: 12px;
-					box-shadow: 2px 2px 5px #00000044;
-					padding:10px 20px;
+					box-shadow: 0 2px 5px #00000044;
+					padding: 10px 20px;
 					color: #fff;
 					margin: 20px;
 					& ul, ol { /* CSS Nesting works! */
 						padding: 5px 0;
 					}
 					& span { /* CSS Nesting works! */
-						background: hsl(300 80% 24%);
-						padding: 12px;
-						border-radius: 4px;
-						&::before { content:'🔮'; padding: 0 4px 0 0; }
+						background: hsl(264 90% 90%);
+						color: hsl(264 30% 40%);
+						padding: 16px 20px;
+						border-radius: 8px;
+						box-shadow: 0 0 5px hsl(0 0% 0% / 20%);
+						&::before { content:'🔮'; padding: 0 1ch 0 0; }
 					}
 				}
 				.me li{
@@ -77,28 +78,27 @@
 					margin: 4px 20px;
 				}
 				.this ol li:nth-child(2) { /* ✨ .this is an alias! */
-					background: hsl(260 50% 50% / 100%);
+					background: hsl(264 50% 50%);
 				}
 				.self ol li:nth-child(3) { /* ✨ .self is an alias! */
-					background: hsl(260 80% 50% / 100%);
+					background: hsl(264 80% 50%);
 				}
-				h1, h2, h3 { font-size: 3rem; margin: 10px; } /* Global CSS syntax works as normal. */
-				.me { animation: bounce 4s ease-in-out infinite; }
-				@keyframes bounce {
+				@keyframes \.me { /* Looped animation @keyframes can be scoped using \ */
 					0% { transform: translateY(0px); }
 					50% { transform: translateY(20px); }
 					100% {  transform: translateY(0px); }
 				}
+				.me { animation: \.me 4s ease-in-out infinite; }
+				h1, h2, h3 { font-size: 3rem; margin: 10px; } /* Global CSS syntax works as normal. */
 			</style>
-			<h1>Styled using .me</h1>
+			<h1>🛸 Scoped style using .me</h1>
 			<ol>
-				<li>Use modern <span> nested CSS</span>
+				<li>Use modern <span>Nested CSS</span>
 				<li>👽 Using .this
 				<li>💀 Using .self
+				<li>⚡ Use live editing in the browser inspector to speed up your workflow, again!
 			</ol>
 		</div>
-
-		<br />
-		<button onClick="window.open('https://github.com/gnat/css-scope-inline/blob/main/example.html');" style="font-family: sans-serif;">😺 Visit the source code for this page.</button>
+		<button onClick="window.open('https://github.com/gnat/css-scope-inline/blob/main/example.html');" style="font-weight: bold; font-family: sans-serif;">🐱 Visit the source code for this page.</button>
 	</body>
 </html>
