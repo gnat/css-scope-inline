@@ -11,7 +11,7 @@
 * You wish `this` would work in `<style>` tags.
 * Only 15 lines. No build step. No dependencies.
 * Use all native features: [CSS Nesting](https://caniuse.com/css-nesting), animations and scoped [`@keyframes`](https://github.com/gnat/css-scope-inline/blob/main/example.html#L86)
-* Pairs well with [Surreal](https://github.com/gnat/surreal) and [htmx](https://htmx.org)
+* Pairs well with [htmx](https://htmx.org) and [Surreal](https://github.com/gnat/surreal)
 * Want fewer layers, less complexity. Are aware of the cargo cult. ✈️
 
 ✨ Want to also scope your `<script>` tags? See our companion project [Surreal](https://github.com/gnat/surreal)
