@@ -6,10 +6,9 @@
 ## Why does this exist?
 
 * You want an easy inline vanilla CSS experience without Tailwind CSS.
-* Hate creating unique class names over.. and over.. to use them once.
+* Hate creating unique class names over.. and over.. to use once.
 * You want to co-locate your styles for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * You wish `this` would work in `<style>` tags.
-* Get the ultra-fast "inspect, play with styles, paste" workflow back.
 * Use all CSS features: [Nesting](https://caniuse.com/css-nesting), animations. Get scoped [`@keyframes`](https://github.com/gnat/css-scope-inline/blob/main/example.html#L86)!
 * Only 15 lines. No build step. No dependencies.
 * Pairs well with [htmx](https://htmx.org) and [Surreal](https://github.com/gnat/surreal)
@@ -42,6 +41,6 @@ Use whatever you'd like, but there's a few advantages with this approach:
 * No suffering from FOUC (a flash of unstyled content) as experienced in Tailwind CDN, Twind, UnoCSS.
 * No high risk of eventually requiring a build step. It just works.
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 15 lines is infinitely maintainable.
-* Use the browser inspector to live edit / copy / paste styles.
+* Get the ultra-fast "inspect, play with styles, paste" workflow back.
 * Zero friction movement of styles between inline and `.css` files.
 * Universal vanilla CSS. No special syntax or editor plugins to install.
