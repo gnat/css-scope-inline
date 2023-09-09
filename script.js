@@ -4,9 +4,9 @@ new MutationObserver((mutations, observer) => {
 	var cssScopePattern = new RegExp('(\\.me|\\.this|\\.self)(?![A-Za-z0-9\_\-])', 'g') // Can use: .me .this .self
 	for (var mutation of mutations) {
 		if (mutation.type !== "childList") continue
-		var nodes = [...mutation.addedNodes] // For subtree mutations (ex: htmx) we check all added nodes.
+		var nodes = [...mutation.addedNodes] // Check new nodes.
 		for (var node = nodes.shift(); node != null; node = nodes.shift()) {
-			nodes.push(...node.childNodes) // Add all child nodes, too.
+			nodes.push(...node.childNodes) // Check children of this new node (subtree).
 			if (node.nodeName !== 'STYLE') continue // Not a <style>
 			if (!node.parentNode || node.parentNode.nodeName === 'HEAD') continue // Must have parent. Don't style <head>
 			var scope = 'self_'+(window.cssScopeCount++) // Ready. Make unique scope, example: .self_1234
