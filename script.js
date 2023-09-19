@@ -1,7 +1,7 @@
 // 🌘 CSS Scope Inline (https://github.com/gnat/css-scope-inline)
 window.cssScopeCount ??= 1 // Let extra copies share the scope count.
 new MutationObserver((mutations, observer) => {
-	var cssScopePattern = new RegExp('(\\.me|\\.this|\\.self)(?![A-Za-z0-9\_\-])', 'g') // Can use: .me .this .self
+	var cssScopePattern = new RegExp('\.(me|this|self)(?![A-Za-z0-9\_\-])', 'g') // Can use: .me .this .self
 	for (var mutation of mutations) {
 		if (mutation.type !== "childList") continue // Skip if not mutating nodes.
 		var nodes = [...mutation.addedNodes] // Get new nodes.
