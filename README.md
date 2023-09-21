@@ -36,11 +36,12 @@ This method also leaves your existing styles untouched, allowing you to mix and 
 
 ## 🤔 Why consider this over Tailwind CSS?
 
-Use whatever you'd like, but there's a few advantages with this approach:
+Use whatever you'd like, but there's a few advantages with this approach over [Tailwind CDN](https://tailwindcss.com/docs/installation/play-cdn), [Twind](https://github.com/tw-in-js/twind), [UnoCSS](https://github.com/unocss/unocss):
 
-* No suffering from FOUC (a flash of unstyled content) as experienced in Tailwind CDN, Twind, UnoCSS.
-* No high risk of eventually requiring a build step. It just works.
+* No more repeat styles on child elements or `[&>*]` or [extracting classes](https://tailwindcss.com/docs/reusing-styles) or groups. It's just CSS!
+* No high risk of eventually requiring a build step. It's just CSS!
+* Get the ultra-fast "inspect, play with styles, paste" workflow back. It's just CSS!
+* No suffering from FOUC (a flash of unstyled content).
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 18 lines is infinitely maintainable.
-* Get the ultra-fast "inspect, play with styles, paste" workflow back.
-* Zero friction movement of styles between inline and `.css` files.
-* Universal vanilla CSS. No special syntax or editor plugins to install.
+* Zero friction movement of styles between inline and `.css` files. Just replace `.me`
+* No special syntax or editor plugins to install- works with the tools you have.
