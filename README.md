@@ -38,7 +38,7 @@ This method also leaves your existing styles untouched, allowing you to mix and 
 
 Use whatever you'd like, but there's a few advantages with this approach over [Tailwind CDN](https://tailwindcss.com/docs/installation/play-cdn), [Twind](https://github.com/tw-in-js/twind), [UnoCSS](https://github.com/unocss/unocss):
 
-* No more repeat styles on child elements or `[&>*]` or [extracting classes](https://tailwindcss.com/docs/reusing-styles) or groups. It's just CSS!
+* No repeated styles on child elements (no `[&>*]`, no [extracting classes](https://tailwindcss.com/docs/reusing-styles), no groups). It's just CSS!
 * No high risk of eventually requiring a build step. It's just CSS!
 * Get the ultra-fast "inspect, play with styles, paste" workflow back. It's just CSS!
 * No suffering from FOUC (a flash of unstyled content).
