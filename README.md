@@ -46,7 +46,7 @@ Use whatever you'd like, but there's a few advantages with this approach over [T
 * Zero friction movement of styles between inline and `.css` files. Just replace `.me`
 * No special syntax or editor plugins to install- works with the tools you have.
 
-## 👁️ CSS Scope Inline vs Tailwind
+## 👁️ CSS Scope Inline vs Tailwind CSS
 Example using CSS variables and child styling.
 
 ```html
