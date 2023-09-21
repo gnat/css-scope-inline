@@ -36,15 +36,15 @@ This method also leaves your existing styles untouched, allowing you to mix and 
 
 ## 🤔 Why consider this over Tailwind CSS?
 
-Use whatever you'd like, but there's a few advantages with this approach (over [Tailwind CDN](https://tailwindcss.com/docs/installation/play-cdn), [Twind](https://github.com/tw-in-js/twind), [UnoCSS](https://github.com/unocss/unocss)):
+Use whatever you'd like, but there's a few advantages with this approach over [Tailwind CDN](https://tailwindcss.com/docs/installation/play-cdn), [Twind](https://github.com/tw-in-js/twind), [UnoCSS](https://github.com/unocss/unocss):
 
-* No more [repeating styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..and no [@apply on @layer](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>*]`). It's just CSS!
+* No more [repeated styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..and no [@apply on @layer](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>*]`). It's just CSS!
 * No high risk of eventually requiring a build step.
 * Get the ultra-fast "inspect, play with styles, paste" workflow back.
 * No suffering from FOUC (a flash of unstyled content).
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 18 lines is infinitely maintainable.
 * Zero friction movement of styles between inline and `.css` files. Just replace `.me`
-* Universal. No special syntax or editor plugins to install- works with the tools you have.
+* No special tooling or plugins to install. Universal pure CSS. 
 
 ## 👁️ CSS Scope Inline vs Tailwind CSS
 Example using CSS variables and child styling.
