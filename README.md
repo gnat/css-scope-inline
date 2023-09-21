@@ -21,7 +21,7 @@
 <div>
     <style>
         .me { background: red; } /* ✨ .this and .self also work! */
-        .me button { background: blue; }
+        .me button { background: blue; } /* style child elements inline! */
     </style>
     <button>I'm blue</button>
 </div>
@@ -45,3 +45,53 @@ Use whatever you'd like, but there's a few advantages with this approach over [T
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 18 lines is infinitely maintainable.
 * Zero friction movement of styles between inline and `.css` files. Just replace `.me`
 * No special syntax or editor plugins to install- works with the tools you have.
+
+## 👁️ CSS Scope Inline vs Tailwind
+Example using CSS variables and child styling.
+
+```html
+<!doctype html>
+    <head>
+        <style>
+            :root {
+                --color-1: hsl(0 0% 88%);
+                --color-1-active: hsl(214 20% 70%);
+            }
+        </style>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>
+    </head>
+    <body>
+        <!-- CSS Scope Inline -->
+        <div>
+            <style>.me { margin:8px 6px;
+                & a { display:block; padding:8px 12px; margin:10px 0; background:var(--color-1); border-radius:10px; text-align:center; }
+                & a:hover { background:var(--color-1-active); color:white; }
+            }</style>
+            <a href="#">Home</a>
+            <a href="#">Team</a>
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Log Out</a>
+        </div>
+
+        <!-- Tailwind Example 1 -->
+        <div class="mx-2 my-4">
+            <a href="#" class="block py-2 px-3 my-2 bg-[color:var(--color-1)] rounded-lg text-center hover:bg-[color:var(--color-1-active)] hover:text-white">Home</a>
+            <a href="#" class="block py-2 px-3 my-2 bg-[color:var(--color-1)] rounded-lg text-center hover:bg-[color:var(--color-1-active)] hover:text-white">Team</a>
+            <a href="#" class="block py-2 px-3 my-2 bg-[color:var(--color-1)] rounded-lg text-center hover:bg-[color:var(--color-1-active)] hover:text-white">Profile</a>
+            <a href="#" class="block py-2 px-3 my-2 bg-[color:var(--color-1)] rounded-lg text-center hover:bg-[color:var(--color-1-active)] hover:text-white">Settings</a>
+            <a href="#" class="block py-2 px-3 my-2 bg-[color:var(--color-1)] rounded-lg text-center hover:bg-[color:var(--color-1-active)] hover:text-white">Log Out</a>
+        </div>
+
+        <!-- Tailwind Example 2 -->
+        <div class="mx-2 my-4 [&>a]:block [&>a]:py-2 [&>a]:px-3 [&>a]:my-2 [&>a]:bg-[color:var(--color-1)] [&>a]:rounded-lg [&>a]:text-center [&>a:hover]:bg-[color:var(--color-1-active)] [&>a:hover]:text-white">
+            <a href="#">Home</a>
+            <a href="#">Team</a>
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Log Out</a>
+        </div>
+    </body>
+</html>
+```
