@@ -6,7 +6,7 @@
 ## Why does this exist?
 
 * You want an easy inline vanilla CSS experience without Tailwind CSS.
-* Hate creating unique class names over.. and over.. to use once.
+* Hate thinking up unique class names over.. and over.. to use once.
 * You want to co-locate your styles for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * You wish `this` would work in `<style>` tags.
 * Use all CSS features: [Nesting](https://caniuse.com/css-nesting), animations. Get scoped [`@keyframes`](https://github.com/gnat/css-scope-inline/blob/main/example.html#L86)!
@@ -36,15 +36,15 @@ This method also leaves your existing styles untouched, allowing you to mix and 
 
 ## 🤔 Why consider this over Tailwind CSS?
 
-Use whatever you'd like, but there's a few advantages with this approach over [Tailwind CDN](https://tailwindcss.com/docs/installation/play-cdn), [Twind](https://github.com/tw-in-js/twind), [UnoCSS](https://github.com/unocss/unocss):
+Use whatever you'd like, but there's a few advantages with this approach (over [Tailwind CDN](https://tailwindcss.com/docs/installation/play-cdn), [Twind](https://github.com/tw-in-js/twind), [UnoCSS](https://github.com/unocss/unocss)):
 
-* No repeated styles on child elements (no `[&>*]`, no [extracting classes](https://tailwindcss.com/docs/reusing-styles), no groups). It's just CSS!
-* No high risk of eventually requiring a build step. It's just CSS!
-* Get the ultra-fast "inspect, play with styles, paste" workflow back. It's just CSS!
+* No more [repeating styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..and no [@apply on @layer](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>*]`). It's just CSS!
+* No high risk of eventually requiring a build step.
+* Get the ultra-fast "inspect, play with styles, paste" workflow back.
 * No suffering from FOUC (a flash of unstyled content).
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 18 lines is infinitely maintainable.
 * Zero friction movement of styles between inline and `.css` files. Just replace `.me`
-* No special syntax or editor plugins to install- works with the tools you have.
+* Universal. No special syntax or editor plugins to install- works with the tools you have.
 
 ## 👁️ CSS Scope Inline vs Tailwind CSS
 Example using CSS variables and child styling.
