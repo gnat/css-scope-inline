@@ -9,8 +9,9 @@
 * Hate creating unique class names over.. and over.. to use once.
 * You want to co-locate your styles for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * You wish `this` would work in `<style>` tags.
-* Use all CSS features: [Nesting](https://caniuse.com/css-nesting), animations. Get scoped [`@keyframes`](https://github.com/gnat/css-scope-inline/blob/main/example.html#L86)!
-* Only 18 lines. No build step. No dependencies.
+* Want all CSS features: [Nesting](https://caniuse.com/css-nesting), animations. Get scoped [`@keyframes`](https://github.com/gnat/css-scope-inline/blob/main/example.html#L86)!
+* Want short `@media` queries for easier [responsive design](https://tailwindcss.com/docs/responsive-design).
+* Only 18 lines of plain JS. No build step. No dependencies.
 * Pairs well with [htmx](https://htmx.org) and [Surreal](https://github.com/gnat/surreal)
 * Want fewer layers, less complexity. Are aware of the cargo cult. ✈️
 
@@ -38,13 +39,24 @@ This method also leaves your existing styles untouched, allowing you to mix and 
 
 Use whatever you'd like, but there's a few advantages with this approach over Tailwind, Twind, UnoCSS:
 
-* No more [repeated styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..and no [@apply on @layer](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>*]`). It's just CSS!
+* No more [repeating styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..and no [@apply](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>*]`). It's just CSS!
 * No high risk of eventually requiring a build step.
+* No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 18 lines is infinitely maintainable.
 * Get the ultra-fast "inspect, play with styles, paste" workflow back.
 * No suffering from FOUC (a flash of unstyled content).
-* No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 18 lines is infinitely maintainable.
 * Zero friction movement of styles between inline and `.css` files. Just replace `.me`
-* No special tooling or plugins to install. Universal pure CSS. 
+* No special tooling or plugins to install. Universal vanilla CSS. 
+
+## ⚡ Workflow Tips
+
+* Use just plain CSS variables in your design system.
+* Use the short `@media` queries for responsive design. Choose one:
+  * Mobile First (**above** breakpoint): **DEFAULT ▶️** `@media sm` `@media md` `@media lg` `@media xl` `@media xxl`
+  * Desktop First (**below** breakpoint):  `@media xs-` `@media sm-` `@media md-` `@media lg-` `@media xl-` **◀️ DEFAULT**
+  * Both sets share breakpoints. Mobile First assumes `xs` default. Desktop First assumes `xxl` default.
+  * Based on [Tailwind](https://tailwindcss.com/docs/responsive-design) breakpoints. Note: We use `xxl` not `2xl` to not break CSS highlighters.
+* Try tools like- Auto complete styles: [VSCode](https://code.visualstudio.com/) or [Sublime](https://packagecontrol.io/packages/Emmet). Auto fold `<style>` and `<script>` in [Sublime](https://packagecontrol.io/packages/Inline%20Fold)
+  * These are not for everybody, but you may find them worthwhile. 
 
 ## 👁️ CSS Scope Inline vs Tailwind CSS
 Example using CSS variables and child styling.
