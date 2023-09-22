@@ -53,7 +53,7 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 * Use the short `@media` queries for responsive design. Choose one:
   * Mobile First (**above** breakpoint): **DEFAULT ▶️** `@media sm` `@media md` `@media lg` `@media xl` `@media xxl`
   * Desktop First (**below** breakpoint):  `@media xs-` `@media sm-` `@media md-` `@media lg-` `@media xl-` **◀️ DEFAULT**
-  * Both sets share breakpoints. Mobile First assumes `xs` default. Desktop First assumes `xxl` default.
+  * Both sets share breakpoints. Mobile First is `xs` default. Desktop First is `xxl` default.
   * Based on [Tailwind](https://tailwindcss.com/docs/responsive-design) breakpoints. Note: We use `xxl` not `2xl` to not break CSS highlighters.
 * Try tools like- Auto complete styles: [VSCode](https://code.visualstudio.com/) or [Sublime](https://packagecontrol.io/packages/Emmet). Auto fold `<style>` and `<script>` in [Sublime](https://packagecontrol.io/packages/Inline%20Fold)
   * These are not for everybody, but you may find them worthwhile. 
