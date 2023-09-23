@@ -84,12 +84,12 @@
 				.self ol li[n2] { /* ✨ .self is an alias! */
 					background: hsl(264 80% 50%);
 				}
-				@keyframes wat { /* ♻️ Looped animation @keyframes can be scoped using \ */
+				@keyframes \.me { /* ♻️ Looped animation @keyframes can be scoped using \ */
 					0% { transform: translateY(0px); }
 					50% { transform: translateY(20px); }
 					100% {  transform: translateY(0px); }
 				}
-				.me { animation: \.me 4s ease-in-out infinite; }
+				.me { animation: \.me 2s ease-in-out infinite; }
 				h1, h2, h3 { font-size: 3rem; margin: 20px 0; } /* Plain CSS works untouched! */
 			</style>
 			<h1>🛸 Scoped style using .me</h1>
