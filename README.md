@@ -40,6 +40,7 @@ This method also leaves your existing styles untouched, allowing you to mix and 
 Use whatever you'd like, but there's a few advantages with this approach over Tailwind, Twind, UnoCSS:
 
 * No more [repeating styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..and no [@apply](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>*]`). It's just CSS!
+* No more visual noise on every `<div>`. Use a local `<style>` per group.
 * No high risk of eventually requiring a build step.
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 18 lines is infinitely maintainable.
 * Get the ultra-fast "inspect, play with styles, paste" workflow back.
