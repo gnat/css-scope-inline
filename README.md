@@ -143,4 +143,4 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 
 ## Technical FAQ
 * Why do you use `QuerySelectorAll()` and not just process the `MutationObserver` results directly?
-  * This will work until you begin recieving subtree mutations (ex: DOM swap, htmx, ajax, jquery). MutationObserver currently requires you to walk all subtree child elements to not miss a `<style>` which is not as performant as QSA when scanning thousands of elements.
+  * Processing `MutationObserver` results will work well until you begin recieving subtrees (ex: DOM swap, htmx, ajax, jquery) which requires you to walk all subtree child elements to not miss a `<style>`. This can involve re-scanning thousands of repeated elements, and `QuerySelectorAll()` ends up the performance winner.
