@@ -32,15 +32,15 @@
 
 		<div>
 			<style>
-				/* One selector, flat style. */
+				/* Flat, 1 selector style. */
 				.me { font-family: 'Noto Sans', sans-serif; background: hsl(264 62% 20%); }
-				/* One selector, nested style. */
+				/* Nested, 1 selector style. */
 				.me { border:none; border-radius: 12px; box-shadow: 0 2px 5px #00000044; padding: 10px 20px; color: #fff; margin: 20px;
 					& span { background: hsl(264 90% 90%); color: hsl(264 30% 40%); padding: 16px 20px; border-radius: 8px; box-shadow: 0 0 5px hsl(0 0% 0% / 20%);
 						&::before { content:'🔮'; padding: 0 1ch 0 0; }
 					}
 				}
-				/* One selector, flat style can be more readable! */
+				/* Flat, 1 selector style can be less busy to look at. We recommend it! */
 				.me ol { padding: 5px 0; }
 				.me ol li { list-style: disc; padding: 4px; border-radius: 12px; margin: 4px 20px }
 				/* ✨ .this and .self alias .me ! */
