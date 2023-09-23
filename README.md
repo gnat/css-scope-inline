@@ -49,14 +49,15 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 
 ## ⚡ Workflow Tips
 
+* Flat, 1 selector per line can be very readable and short. See the examples.
 * Use just plain CSS variables in your design system.
 * Use the short `@media` queries for responsive design.
   * Mobile First (flow: **above** breakpoint): **🟢 None** `sm` `md` `lg` `xl` `xx` 🏁
   * Desktop First (flow: **below** breakpoint): 🏁 `xs-` `sm-` `md-` `lg-` `xl-` **🟢 None**
   * 🟢 = No breakpoint. Default. See the [Live Example](https://gnat.github.io/css-scope-inline/example.html)!
   * Based on [Tailwind](https://tailwindcss.com/docs/responsive-design) breakpoints. We use `xx` not `2xl` to not break CSS highlighters.
-* Try tools like- Auto complete styles: [VSCode](https://code.visualstudio.com/) or [Sublime](https://packagecontrol.io/packages/Emmet). Auto fold `<style>` and `<script>` in [Sublime](https://packagecontrol.io/packages/Inline%20Fold)
-  * These are not for everybody, but you may find them worthwhile. 
+* Positional selectors may be easier using `div[n1]` for `<div n1>` instead of `div:nth-child(1)`
+* Try tools like- Auto complete styles: [VSCode](https://code.visualstudio.com/) or [Sublime](https://packagecontrol.io/packages/Emmet)
 
 ## 👁️ CSS Scope Inline vs Tailwind CSS Showdowns
 ### Basics
