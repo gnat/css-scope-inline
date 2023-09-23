@@ -58,8 +58,40 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 * Try tools like- Auto complete styles: [VSCode](https://code.visualstudio.com/) or [Sublime](https://packagecontrol.io/packages/Emmet). Auto fold `<style>` and `<script>` in [Sublime](https://packagecontrol.io/packages/Inline%20Fold)
   * These are not for everybody, but you may find them worthwhile. 
 
-## 👁️ CSS Scope Inline vs Tailwind CSS
-Example using CSS variables and child styling.
+## 👁️ CSS Scope Inline vs Tailwind CSS Showdowns
+### Basics
+```html
+<!-- CSS Scoped Inline -->
+<div>
+    <style>
+        .me { background: red; }
+        .me div { background: green; }
+        .me div[n1] { background: yellow; }
+        .me div[n2] { background: blue; }
+    </style>
+    red
+    <div>green</div>
+    <div>green</div>
+    <div>green</div>
+    <div n1>yellow</div>
+    <div n2>blue</div>
+    <div>green</div>
+    <div>green</div>
+</div>
+
+<!-- Tailwind -->
+<div class="bg-[red]">
+    red
+    <div class="bg-[green]">green</div>
+    <div class="bg-[green]">green</div>
+    <div class="bg-[green]">green</div>
+    <div class="bg-[yellow]">yellow</div>
+    <div class="bg-[blue]">blue</div>
+    <div class="bg-[green]">green</div>
+    <div class="bg-[green]">green</div>
+</div>
+```
+### CSS variables and child styling
 
 ```html
 <!doctype html>
@@ -76,10 +108,11 @@ Example using CSS variables and child styling.
     <body>
         <!-- CSS Scope Inline -->
         <div>
-            <style>.me { margin:8px 6px;
-                & a { display:block; padding:8px 12px; margin:10px 0; background:var(--color-1); border-radius:10px; text-align:center; }
-                & a:hover { background:var(--color-1-active); color:white; }
-            }</style>
+            <style>
+               .me { margin:8px 6px; }
+               .me a { display:block; padding:8px 12px; margin:10px 0; background:var(--color-1); border-radius:10px; text-align:center; }
+               .me a:hover { background:var(--color-1-active); color:white; }
+            </style>
             <a href="#">Home</a>
             <a href="#">Team</a>
             <a href="#">Profile</a>
