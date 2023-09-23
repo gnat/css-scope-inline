@@ -62,8 +62,9 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 
 ## 👁️ CSS Scope Inline vs Tailwind CSS Showdowns
 ### Basics
+Tailwind verbosity goes up with more child elements.
 ```html
-<!-- CSS Scoped Inline -->
+<!-- CSS Scope Inline -->
 <div>
     <style>
         .me { background: red; }
@@ -94,7 +95,6 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 </div>
 ```
 ### CSS variables and child styling
-
 ```html
 <!doctype html>
     <head>
@@ -141,6 +141,38 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
         </div>
     </body>
 </html>
+```
+### From the [Tailwind Manual](https://tailwindcss.com/docs/utility-first)
+Converted from the manual- Tailwind should be at its strongest here! 🙂
+```html
+<!-- CSS Scope Inline -->
+<div>
+    <style>
+        .me { display:flex; max-width:24rem; margin:0 auto; padding:1.5rem; background:#fff; border-radius:0.5rem; }
+        .me div[n1] img { height:3rem; width:3rem; }
+        .me div[n2] { margin:0 0 0 1.5rem; padding:0.25rem 0 0 0; }
+        .me div[n2] h4 { color:#1a202c; font-size:1.25rem; }
+        .me div[n2] p { color:#718096; font-size:1rem; }
+    </style>
+    <div n1>
+        <img src="/img/logo.svg" alt="ChitChat Logo">
+    </div>
+    <div n2>
+        <h4>ChitChat</h4>
+        <p>You have a new message!</p>
+    </div>
+</div>
+
+<!-- Tailwind Example -->
+<div class="flex max-w-sm mx-auto p-6 bg-white rounded-xl items-center space-x-4">
+    <div class="shrink-0">
+        <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
+    </div>
+    <div>
+        <div class="text-xl font-medium text-black">ChitChat</div>
+        <p class="text-slate-500">You have a new message!</p>
+    </div>
+</div>
 ```
 
 ## 🔎 Technical FAQ
