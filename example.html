@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<title>🌘 CSS Scope Inline Test Page</title>
-		<script src="script.js"></script> <!-- ... or add as inline <script> ! -->
+		<!-- ... or add as inline <script> ! -->
+		<script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>
 		<style>
 			*,*::before,*::after{ margin: 0; box-sizing: border-box; } /* Reset */
 			html {
@@ -15,7 +16,7 @@
 			body {
 				font-size: 2rem; /* 2rem = 20px in our setup. */
 			}
-			button {
+			html button {
 				font-size: 2rem;
 				cursor: pointer;
 				color: #fff;
@@ -77,28 +78,83 @@
 					border-radius: 12px;
 					margin: 4px 20px;
 				}
-				.this ol li:nth-child(2) { /* ✨ .this is an alias! */
+				.this ol li[n1] { /* ✨ .this is an alias! */
 					background: hsl(264 50% 50%);
 				}
-				.self ol li:nth-child(3) { /* ✨ .self is an alias! */
+				.self ol li[n2] { /* ✨ .self is an alias! */
 					background: hsl(264 80% 50%);
 				}
-				@keyframes \.me { /* ♻️ Looped animation @keyframes can be scoped using \ */
+				@keyframes wat { /* ♻️ Looped animation @keyframes can be scoped using \ */
 					0% { transform: translateY(0px); }
 					50% { transform: translateY(20px); }
 					100% {  transform: translateY(0px); }
 				}
 				.me { animation: \.me 4s ease-in-out infinite; }
-				h1, h2, h3 { font-size: 3rem; margin: 10px; } /* Normal global CSS works untouched! */
+				h1, h2, h3 { font-size: 3rem; margin: 20px 0; } /* Plain CSS works untouched! */
 			</style>
 			<h1>🛸 Scoped style using .me</h1>
 			<ol>
 				<li>Use modern <span>Nested CSS</span>
-				<li>👽 Using .this
-				<li>💀 Using .self
+				<li n1>👽 Using .this
+				<li n2>💀 Using .self
 				<li>⚡ Use live editing in the browser inspector to speed up your workflow, again!
 			</ol>
 		</div>
+
 		<button onClick="window.open('https://github.com/gnat/css-scope-inline/blob/main/example.html');" style="font-weight: bold; font-family: sans-serif;">🐱 View code for this page.</button>
+
+		<div>
+			<style>
+				.me { --color: hsl(264 80% 50%); font-family: sans-serif; margin: 20px }
+				.me div { margin: 20px }
+				.me div div ul { display: inline }
+				.me div ul li { display: inline-block; width: 140px; text-align: center; background: #444; border-radius: 5px; padding: 10px; margin: 10px 10px }
+			</style>
+			<h2>Responsive Design 🔛 Resize the window!</h2>
+			<div>
+				<style>
+					.me ul li[n1] { background: var(--color); }
+					@media sm { .me ul li[n2] { background: var(--color); } }
+					@media md { .me ul li[n3] { background: var(--color); } }
+					@media lg { .me ul li[n4] { background: var(--color); } }
+					@media xl { .me ul li[n5] { background: var(--color); } }
+					@media xx { .me ul li[n6] { background: var(--color); } }
+				</style>
+				<div>Mobile First (<strong>above</strong> breakpoint)</div>
+				<ul><li n1><strong>🟢 None</strong><li n2>sm<li n3>md<li n4>lg<li n5>xl<li n6>🏁 xx</ul>
+			</div>
+			<div>
+				<style>
+					.me ul li[n1] { background: var(--color); }
+					@media xl- { .me ul li[n2] { background: var(--color); } }
+					@media lg- { .me ul li[n3] { background: var(--color); } }
+					@media md- { .me ul li[n4] { background: var(--color); } }
+					@media sm- { .me ul li[n5] { background: var(--color); } }
+					@media xs- { .me ul li[n6] { background: var(--color); } }
+				</style>
+				<div>Desktop First (<strong>below</strong> breakpoint)</div>
+				<ul><li n6>🏁 xs-<li n5>sm-<li n4>md-<li n3>lg-<li n2>xl-<li n1><strong>🟢 None</strong></ul>
+				<br />🟢 = No breakpoint. Default starting point.
+			</div>
+			<br />
+
+			<h2>HTMX Test</h2>
+			<script src="https://unpkg.com/htmx.org@1.9.5"></script>
+			<div>Swapped DOM elements are styled instantly when they arrive.</div>
+			<button garlic hx-get="/example.html" hx-select="button[garlic]" hx-swap="afterend">
+				<style>
+					.me { margin: 4px; padding: 2px; min-width: 100px; background: hsl(264 80% 47%); border-bottom: 0.5rem solid hsl(264 80% 20%); }
+					.me:hover { background: hsl(264 80% 60%); }
+				</style>
+				🧄
+			</button>
+			<button vampire hx-get="/example.html" hx-select="button[vampire]" hx-swap="afterend">
+				<style>
+					.me { margin: 4px; padding: 2px; min-width: 100px; background: hsl(150 80% 47%); border-bottom: 0.5rem solid hsl(150 80% 28%); }
+					.me:hover { background: hsl(150 80% 60%); }
+				</style>
+				🧛
+			</button>
+		</div>
 	</body>
 </html>
