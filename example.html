@@ -14,21 +14,9 @@
 				color: #ccc;
 			}
 			body { font-size: 2rem } /* 2rem = 20px in our setup. */
-			html button {
-				font-size: 2rem;
-				cursor: pointer;
-				color: #fff;
-				text-shadow: 0 2px #000000AA;
-				padding: 2rem 2.4rem;
-				margin: 2rem;
-				background: hsl(345 100% 47%);
-				border: 0;
-				border-bottom: 0.5rem solid hsl(345 100% 28%);
-				border-radius: 12px;
-				transition: all 0.3s;
-				&:hover { background: hsl(345 100% 60%); transform: translateY(-0.2rem) }
-				&:active { transform: translateY(0.2rem) }
-			}
+			html button { font-size: 2rem; cursor: pointer; color: #fff; text-shadow: 0 2px #000000AA; padding: 2rem 2.4rem; margin: 2rem; background: hsl(345 100% 47%); border: 0; border-bottom: 0.5rem solid hsl(345 100% 28%); border-radius: 12px; transition: all 0.3s; }
+			html button:hover { background: hsl(345 100% 60%); transform: translateY(-0.2rem) }
+			html button:active { transform: translateY(0.2rem) }
 		</style>
 	</head>
 	<body>
@@ -45,14 +33,7 @@
 		<div>
 			<style>
 				.me {
-					font-family: 'Noto Sans', sans-serif;
-					background: hsl(264 62% 20%);
-					border:none;
-					border-radius: 12px;
-					box-shadow: 0 2px 5px #00000044;
-					padding: 10px 20px;
-					color: #fff;
-					margin: 20px;
+					font-family: 'Noto Sans', sans-serif; background: hsl(264 62% 20%); border:none; border-radius: 12px; box-shadow: 0 2px 5px #00000044; padding: 10px 20px; color: #fff; margin: 20px;
 					/* CSS Nesting works! */
 					& span {
 						background: hsl(264 90% 90%);
