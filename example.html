@@ -32,13 +32,15 @@
 
 		<div>
 			<style>
-				.me { font-family: 'Noto Sans', sans-serif; background: hsl(264 62% 20%); border:none; border-radius: 12px; box-shadow: 0 2px 5px #00000044; padding: 10px 20px; color: #fff; margin: 20px;
-					/* CSS Nesting works! */
+				/* One selector, flat style. */
+				.me { font-family: 'Noto Sans', sans-serif; background: hsl(264 62% 20%); }
+				/* One selector, nested style. */
+				.me { border:none; border-radius: 12px; box-shadow: 0 2px 5px #00000044; padding: 10px 20px; color: #fff; margin: 20px;
 					& span { background: hsl(264 90% 90%); color: hsl(264 30% 40%); padding: 16px 20px; border-radius: 8px; box-shadow: 0 0 5px hsl(0 0% 0% / 20%);
 						&::before { content:'🔮'; padding: 0 1ch 0 0; }
 					}
 				}
-				/* Flat style can be more readable! 1 selector per line. */
+				/* One selector, flat style can be more readable! */
 				.me ol { padding: 5px 0; }
 				.me ol li { list-style: disc; padding: 4px; border-radius: 12px; margin: 4px 20px }
 				/* ✨ .this and .self alias .me ! */
@@ -100,7 +102,7 @@
 			<br />
 
 			<h2>HTMX Test</h2>
-			<script src="https://unpkg.com/htmx.org@1.9.5"></script>
+			<script src="https://unpkg.com/htmx.org@1.9.5" defer></script>
 			<div>Swapped DOM elements are styled instantly when they arrive.</div>
 			<button garlic hx-get="https://gnat.github.io/css-scope-inline/example.html" hx-select="button[garlic]" hx-swap="afterend">
 				<style>
