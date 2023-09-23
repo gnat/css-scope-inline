@@ -32,20 +32,19 @@
 
 		<div>
 			<style>
-				/* Flat, 1 selector style. */
-				.me { font-family: 'Noto Sans', sans-serif; background: hsl(264 62% 20%); }
-				/* Nested, 1 selector style. */
-				.me { border:none; border-radius: 12px; box-shadow: 0 2px 5px #00000044; padding: 10px 20px; color: #fff; margin: 20px;
+				/* Flat, 1 selector style. Really easy. We recommend it! */
+				.me { font-family: 'Noto Sans', sans-serif; background: hsl(264 62% 20%); color: #fff; }
+				.me ol { padding: 5px 0; }
+				.me ol li { list-style: disc; padding: 4px; border-radius: 12px; margin: 4px 20px }
+				/* ✨ .this and .self alias .me */
+				.this ol li[n1] { background: hsl(264 50% 50%) }
+				.self ol li[n2] { background: hsl(264 80% 50%) }
+				/* Nested, 1 selector style. Possible! But visually busy. */
+				.me { border:none; border-radius: 12px; box-shadow: 0 2px 5px #00000044; padding: 10px 20px; margin: 20px;
 					& span { background: hsl(264 90% 90%); color: hsl(264 30% 40%); padding: 16px 20px; border-radius: 8px; box-shadow: 0 0 5px hsl(0 0% 0% / 20%);
 						&::before { content:'🔮'; padding: 0 1ch 0 0; }
 					}
 				}
-				/* Flat, 1 selector style can be less busy to look at. We recommend it! */
-				.me ol { padding: 5px 0; }
-				.me ol li { list-style: disc; padding: 4px; border-radius: 12px; margin: 4px 20px }
-				/* ✨ .this and .self alias .me ! */
-				.this ol li[n1] { background: hsl(264 50% 50%) }
-				.self ol li[n2] { background: hsl(264 80% 50%) }
 				/* Animations */
 				.me { animation: \.me 2s ease-in-out infinite }
 				@keyframes \.me { /* ♻️ Looped animation @keyframes can be scoped using \ */
