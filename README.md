@@ -51,10 +51,10 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 
 * Use just plain CSS variables in your design system.
 * Use the short `@media` queries for responsive design. Choose one:
-  * Mobile First (**above** breakpoint): **DEFAULT ▶️** `@media sm` `@media md` `@media lg` `@media xl` `@media xx`
-  * Desktop First (**below** breakpoint):  `@media xs-` `@media sm-` `@media md-` `@media lg-` `@media xl-` **◀️ DEFAULT**
-  * Both sets share breakpoints. Mobile First is `xs` default. Desktop First is `xx` default.
-  * Based on [Tailwind](https://tailwindcss.com/docs/responsive-design) breakpoints. Note: We use `xx` not `2xl` to not break CSS highlighters.
+  * Mobile First (flow: **above** breakpoint): **🟢 None** `sm` `md` `lg` `xl` `xx` 🏁
+  * Desktop First (flow: **below** breakpoint): 🏁 `xs-` `sm-` `md-` `lg-` `xl-` **🟢 None**
+  * 🟢 = No breakpoint. Default. See the [Live Example](https://gnat.github.io/css-scope-inline/example.html)!
+  * Based on [Tailwind](https://tailwindcss.com/docs/responsive-design) breakpoints. We use `xx` not `2xl` to not break CSS highlighters.
 * Try tools like- Auto complete styles: [VSCode](https://code.visualstudio.com/) or [Sublime](https://packagecontrol.io/packages/Emmet). Auto fold `<style>` and `<script>` in [Sublime](https://packagecontrol.io/packages/Inline%20Fold)
   * These are not for everybody, but you may find them worthwhile. 
 
@@ -141,6 +141,6 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 </html>
 ```
 
-## Technical FAQ
+## 🔎 Technical FAQ
 * Why do you use `QuerySelectorAll()` and not just process the `MutationObserver` results directly?
   * Processing `MutationObserver` results will work well until you begin recieving subtrees (ex: DOM swap, [htmx](https://htmx.org), ajax, jquery) which requires you to walk all subtree child elements to not miss a `<style>`. This can involve re-scanning thousands of repeated elements, and `QuerySelectorAll()` ends up the simplicty and performance winner.
