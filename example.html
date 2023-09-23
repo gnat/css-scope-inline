@@ -13,9 +13,7 @@
 				background: #222;
 				color: #ccc;
 			}
-			body {
-				font-size: 2rem; /* 2rem = 20px in our setup. */
-			}
+			body { font-size: 2rem } /* 2rem = 20px in our setup. */
 			html button {
 				font-size: 2rem;
 				cursor: pointer;
@@ -28,13 +26,8 @@
 				border-bottom: 0.5rem solid hsl(345 100% 28%);
 				border-radius: 12px;
 				transition: all 0.3s;
-				&:hover {
-					background: hsl(345 100% 60%);
-					transform: translateY(-0.2rem);
-				}
-				&:active {
-					transform: translateY(0.2rem);
-				}
+				&:hover { background: hsl(345 100% 60%); transform: translateY(-0.2rem) }
+				&:active { transform: translateY(0.2rem) }
 			}
 		</style>
 	</head>
@@ -60,10 +53,8 @@
 					padding: 10px 20px;
 					color: #fff;
 					margin: 20px;
-					& ul, ol { /* CSS Nesting works! */
-						padding: 5px 0;
-					}
-					& span { /* CSS Nesting works! */
+					/* CSS Nesting works! */
+					& span {
 						background: hsl(264 90% 90%);
 						color: hsl(264 30% 40%);
 						padding: 16px 20px;
@@ -72,25 +63,21 @@
 						&::before { content:'🔮'; padding: 0 1ch 0 0; }
 					}
 				}
-				.me li{
-					list-style: disc;
-					padding: 4px;
-					border-radius: 12px;
-					margin: 4px 20px;
-				}
-				.this ol li[n1] { /* ✨ .this is an alias! */
-					background: hsl(264 50% 50%);
-				}
-				.self ol li[n2] { /* ✨ .self is an alias! */
-					background: hsl(264 80% 50%);
-				}
+				/* Flat style can be more readable! 1 selector per line. */
+				.me ol { padding: 5px 0; }
+				.me ol li{ list-style: disc; padding: 4px; border-radius: 12px; margin: 4px 20px }
+				/* ✨ .this and .self alias .me ! */
+				.this ol li[n1] { background: hsl(264 50% 50%) }
+				.self ol li[n2] { background: hsl(264 80% 50%) }
+				/* Animations */
+				.me { animation: \.me 2s ease-in-out infinite }
 				@keyframes \.me { /* ♻️ Looped animation @keyframes can be scoped using \ */
 					0% { transform: translateY(0px); }
 					50% { transform: translateY(20px); }
 					100% {  transform: translateY(0px); }
 				}
-				.me { animation: \.me 2s ease-in-out infinite; }
-				h1, h2, h3 { font-size: 3rem; margin: 20px 0; } /* Plain CSS works untouched! */
+				/* Plain CSS works untouched! */
+				h1, h2, h3 { font-size: 3rem; margin: 20px 0; }
 			</style>
 			<h1>🛸 Scoped style using .me</h1>
 			<ol>
@@ -100,17 +87,17 @@
 				<li>⚡ Use live editing in the browser inspector to speed up your workflow, again!
 			</ol>
 		</div>
-
-		<button onClick="window.open('https://github.com/gnat/css-scope-inline/blob/main/example.html');" style="font-weight: bold; font-family: sans-serif;">🐱 View code for this page.</button>
+		<br />
 
 		<div>
 			<style>
 				.me { --color: hsl(264 80% 50%); font-family: sans-serif; margin: 20px }
 				.me div { margin: 20px 0 }
-				.me div div ul { display: inline }
-				.me div ul li { display: inline-block; width: 140px; text-align: center; background: #444; border-radius: 5px; padding: 10px; margin: 10px 10px }
+				.me div ul { margin: 0; padding: 0 }
+				.me div ul li { display: inline-block; width: 110px; text-align: center; background: #444; border-radius: 5px; padding: 10px 2px; margin: 10px 10px }
 			</style>
 			<h2>Responsive Design 🔛 Resize the window!</h2>
+			🟢 = No breakpoint. Default.
 			<div>
 				<style>
 					.me ul li[n1] { background: var(--color); }
@@ -134,7 +121,6 @@
 				</style>
 				<div>Desktop First (<strong>below</strong> breakpoint)</div>
 				<ul><li n6>🏁 xs-<li n5>sm-<li n4>md-<li n3>lg-<li n2>xl-<li n1><strong>🟢 None</strong></ul>
-				<br />🟢 = No breakpoint. Default starting point.
 			</div>
 			<br />
 
@@ -156,5 +142,7 @@
 				🧛
 			</button>
 		</div>
+
+		<button onClick="window.open('https://github.com/gnat/css-scope-inline/blob/main/example.html');" style="font-weight: bold; font-family: sans-serif;">🐱 View code for this page.</button>
 	</body>
 </html>
