@@ -5,7 +5,7 @@
 		<!-- ... or add as inline <script> ! -->
 		<script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>
 		<style>
-			*,*::before,*::after{ margin: 0; box-sizing: border-box; } /* Reset */
+			*,*::before,*::after { margin: 0; box-sizing: border-box; } /* Reset */
 			html {
 				font-size: 10px; /* Root size. Usage: 1.8rem = 18px (1rem = 10px) */
 				text-size-adjust: none; /* Reset auto size. */
@@ -38,9 +38,9 @@
 						&::before { content:'🔮'; padding: 0 1ch 0 0; }
 					}
 				}
-				/* Flat style can be more readable. */
+				/* Flat style can be more readable! 1 selector per line. */
 				.me ol { padding: 5px 0; }
-				.me ol li{ list-style: disc; padding: 4px; border-radius: 12px; margin: 4px 20px }
+				.me ol li { list-style: disc; padding: 4px; border-radius: 12px; margin: 4px 20px }
 				/* ✨ .this and .self alias .me ! */
 				.this ol li[n1] { background: hsl(264 50% 50%) }
 				.self ol li[n2] { background: hsl(264 80% 50%) }
