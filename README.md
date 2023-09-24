@@ -35,6 +35,14 @@ This uses `MutationObserver` to monitor the DOM, and the moment a `<style>` tag 
 
 This method also leaves your existing styles untouched, allowing you to mix and match at your liesure.
 
+## 🎁 Installation
+
+✂️ Copy + 📋 paste the snippet into your HTML. 
+
+Or, 📥 [download](https://raw.githubusercontent.com/gnat/css-scope-inline/main/script.js) into your project, and add `<script src="script.js"></script>` to your `<head>`.
+
+Or, 🌐 use the CDN: `<script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline/script.js"></script>`
+
 ## 🤔 Why consider this over Tailwind CSS?
 
 Use whatever you'd like, but there's a few advantages with this approach over Tailwind, Twind, UnoCSS:
