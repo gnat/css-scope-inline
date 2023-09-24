@@ -37,7 +37,7 @@ This method also leaves your existing styles untouched, allowing you to mix and 
 
 ## 🎁 Installation
 
-✂️ Copy + 📋 paste the snippet into your HTML. 
+Just ✂️ copy + 📋 paste the snippet into your HTML. 
 
 Or, 📥 [download](https://raw.githubusercontent.com/gnat/css-scope-inline/main/script.js) into your project, and add `<script src="script.js"></script>` to your `<head>`.
 
