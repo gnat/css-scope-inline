@@ -35,9 +35,9 @@ This uses `MutationObserver` to monitor the DOM, and the moment a `<style>` tag 
 
 This method also leaves your existing styles untouched, allowing you to mix and match at your liesure.
 
-## 🎁 Installation
+## 🎁 Install
 
-Just ✂️ copy + 📋 paste the snippet into your HTML. 
+✂️ copy + 📋 paste the snippet into your HTML. 
 
 Or, 📥 [download](https://raw.githubusercontent.com/gnat/css-scope-inline/main/script.js) into your project, and add `<script src="script.js"></script>` to your `<head>`.
 
