@@ -47,8 +47,8 @@ Or, 🌐 the CDN: `<script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inlin
 
 Use whatever you'd like, but there's a few advantages with this approach over Tailwind, Twind, UnoCSS:
 
-* No more [repeating styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..and no [@apply](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>*]`). It's just CSS!
-* No more visual noise on every `<div>`. Use a local `<style>` per group.
+* No more [repeating styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..no [@apply](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>thing]` per style). It's just CSS!
+* No endless visual noise on every `<div>`. Use a local `<style>` per group.
 * No high risk of eventually requiring a build step.
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 18 lines is infinitely maintainable.
 * Get the ultra-fast "inspect, play with styles, paste" workflow back.
@@ -120,32 +120,34 @@ Tailwind verbosity goes up with more child elements.
         <div>
             <style>
                .me { margin:8px 6px; }
-               .me a { display:block; padding:8px 12px; margin:10px 0; background:var(--color-1); border-radius:10px; text-align:center; }
-               .me a:hover { background:var(--color-1-active); color:white; }
+               .me div a { display:block; padding:8px 12px; margin:10px 0; background:var(--color-1); border-radius:10px; text-align:center; }
+               .me div a:hover { background:var(--color-1-active); color:white; }
             </style>
-            <a href="#">Home</a>
-            <a href="#">Team</a>
-            <a href="#">Profile</a>
-            <a href="#">Settings</a>
-            <a href="#">Log Out</a>
+            <div><a href="#">Home</a></div>
+            <div><a href="#">Team</a></div>
+            <div><a href="#">Profile</a></div>
+            <div><a href="#">Settings</a></div>
+            <div><a href="#">Log Out</a></div>
         </div>
 
         <!-- Tailwind Example 1 -->
         <div class="mx-2 my-4">
-            <a href="#" class="block py-2 px-3 my-2 bg-[color:var(--color-1)] rounded-lg text-center hover:bg-[color:var(--color-1-active)] hover:text-white">Home</a>
-            <a href="#" class="block py-2 px-3 my-2 bg-[color:var(--color-1)] rounded-lg text-center hover:bg-[color:var(--color-1-active)] hover:text-white">Team</a>
-            <a href="#" class="block py-2 px-3 my-2 bg-[color:var(--color-1)] rounded-lg text-center hover:bg-[color:var(--color-1-active)] hover:text-white">Profile</a>
-            <a href="#" class="block py-2 px-3 my-2 bg-[color:var(--color-1)] rounded-lg text-center hover:bg-[color:var(--color-1-active)] hover:text-white">Settings</a>
-            <a href="#" class="block py-2 px-3 my-2 bg-[color:var(--color-1)] rounded-lg text-center hover:bg-[color:var(--color-1-active)] hover:text-white">Log Out</a>
+            <div><a href="#" class="block py-2 px-3 my-2 bg-[--color-1] rounded-lg text-center hover:bg-[--color-1-active] hover:text-white">Home</a></div>
+            <div><a href="#" class="block py-2 px-3 my-2 bg-[--color-1] rounded-lg text-center hover:bg-[--color-1-active] hover:text-white">Team</a></div>
+            <div><a href="#" class="block py-2 px-3 my-2 bg-[--color-1] rounded-lg text-center hover:bg-[--color-1-active] hover:text-white">Profile</a></div>
+            <div><a href="#" class="block py-2 px-3 my-2 bg-[--color-1] rounded-lg text-center hover:bg-[--color-1-active] hover:text-white">Settings</a></div>
+            <div><a href="#" class="block py-2 px-3 my-2 bg-[--color-1] rounded-lg text-center hover:bg-[--color-1-active] hover:text-white">Log Out</a></div>
         </div>
 
         <!-- Tailwind Example 2 -->
-        <div class="mx-2 my-4 [&>a]:block [&>a]:py-2 [&>a]:px-3 [&>a]:my-2 [&>a]:bg-[color:var(--color-1)] [&>a]:rounded-lg [&>a]:text-center [&>a:hover]:bg-[color:var(--color-1-active)] [&>a:hover]:text-white">
-            <a href="#">Home</a>
-            <a href="#">Team</a>
-            <a href="#">Profile</a>
-            <a href="#">Settings</a>
-            <a href="#">Log Out</a>
+        <div class="mx-2 my-4
+            [&_div_a]:block [&_div_a]:py-2 [&_div_a]:px-3 [&_div_a]:my-2 [&_div_a]:bg-[--color-1] [&_div_a]:rounded-lg [&_div_a]:text-center
+            [&_div_a:hover]:bg-[--color-1-active] [&_div_a:hover]:text-white">
+            <div><a href="#">Home</a></div>
+            <div><a href="#">Team</a></div>
+            <div><a href="#">Profile</a></div>
+            <div><a href="#">Settings</a></div>
+            <div><a href="#">Log Out</a></div>
         </div>
     </body>
 </html>
