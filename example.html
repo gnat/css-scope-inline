@@ -89,12 +89,15 @@
 			</div>
 			<div>
 				<style>
-					.me ul li[n1] { background: var(--color); }
-					@media xl- { .me ul li[n2] { background: var(--color); } }
-					@media lg- { .me ul li[n3] { background: var(--color); } }
-					@media md- { .me ul li[n4] { background: var(--color); } }
-					@media sm- { .me ul li[n5] { background: var(--color); } }
-					@media xs- { .me ul li[n6] { background: var(--color); } }
+					/* You can also nest @media styles! */
+					.me ul li {
+						&[n1] { background: var(--color); }
+						@media xl- { &[n2] { background: var(--color); } }
+						@media lg- { &[n3] { background: var(--color); } }
+						@media md- { &[n4] { background: var(--color); } }
+						@media sm- { &[n5] { background: var(--color); } }
+						@media xs- { &[n6] { background: var(--color); } }
+					}
 				</style>
 				<div>Desktop First (<strong>below</strong> breakpoint)</div>
 				<ul><li n6>🏁 xs-<li n5>sm-<li n4>md-<li n3>lg-<li n2>xl-<li n1><strong>🟢 None</strong></ul>
