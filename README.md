@@ -58,7 +58,7 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 
 ## ⚡ Workflow Tips
 
-* Flat, 1 selector per line can be very readable and short. See the examples.
+* Flat, 1 selector per line can be very short like Tailwind. See the examples.
 * Use just plain CSS variables in your design system.
 * Use the short `@media` queries for responsive design.
   * Mobile First (flow: **above** breakpoint): **🟢 None** `sm` `md` `lg` `xl` `xx` 🏁
