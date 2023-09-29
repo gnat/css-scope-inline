@@ -21,8 +21,8 @@
 ```html
 <div>
     <style>
-        .me { background: red; } /* ✨ .this and .self also work! */
-        .me button { background: blue; } /* style child elements inline! */
+        me { background: red; } /* ✨ this & self also work! */
+        me button { background: blue; } /* style child elements inline! */
     </style>
     <button>I'm blue</button>
 </div>
@@ -53,7 +53,7 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 18 lines is infinitely maintainable.
 * Get the ultra-fast "inspect, play with styles, paste" workflow back.
 * No suffering from FOUC (a flash of unstyled content).
-* Zero friction movement of styles between inline and `.css` files. Just replace `.me`
+* Zero friction movement of styles between inline and `.css` files. Just replace `me`
 * No special tooling or plugins to install. Universal vanilla CSS. 
 
 ## ⚡ Workflow Tips
@@ -76,10 +76,10 @@ Tailwind verbosity goes up with more child elements.
 <!-- CSS Scope Inline -->
 <div>
     <style>
-        .me { background: red; }
-        .me div { background: green; }
-        .me div[n1] { background: yellow; }
-        .me div[n2] { background: blue; }
+        me { background: red; }
+        me div { background: green; }
+        me div[n1] { background: yellow; }
+        me div[n2] { background: blue; }
     </style>
     red
     <div>green</div>
@@ -120,9 +120,9 @@ Tailwind verbosity goes up with more child elements.
         <!-- CSS Scope Inline -->
         <div>
             <style>
-               .me { margin:8px 6px; }
-               .me div a { display:block; padding:8px 12px; margin:10px 0; background:var(--color-1); border-radius:10px; text-align:center; }
-               .me div a:hover { background:var(--color-1-active); color:white; }
+               me { margin:8px 6px; }
+               me div a { display:block; padding:8px 12px; margin:10px 0; background:var(--color-1); border-radius:10px; text-align:center; }
+               me div a:hover { background:var(--color-1-active); color:white; }
             </style>
             <div><a href="#">Home</a></div>
             <div><a href="#">Team</a></div>
