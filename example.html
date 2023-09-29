@@ -24,8 +24,8 @@
 
 		<div>
 			<style> /* Simple example. */
-				.me { margin: 20px; }
-				.me div { font-size: 5rem; }
+				me { margin: 20px; }
+				me div { font-size: 5rem; }
 			</style>
 			<div>👻</div>
 		</div>
@@ -33,21 +33,21 @@
 		<div>
 			<style>
 				/* Flat, 1 selector style. Really easy. We recommend it! */
-				.me { font-family: 'Noto Sans', sans-serif; background: hsl(264 62% 20%); color: #fff; }
-				.me ol { padding: 5px 0; }
-				.me ol li { list-style: disc; padding: 4px; border-radius: 12px; margin: 4px 20px }
-				/* ✨ .this and .self alias .me */
-				.this ol li[n1] { background: hsl(264 50% 50%) }
-				.self ol li[n2] { background: hsl(264 80% 50%) }
+				me { font-family: 'Noto Sans', sans-serif; background: hsl(264 62% 20%); color: #fff; }
+				me ol { padding: 5px 0; }
+				me ol li { list-style: disc; padding: 4px; border-radius: 12px; margin: 4px 20px }
+				/* ✨ this and self alias me */
+				this ol li[n1] { background: hsl(264 50% 50%) }
+				self ol li[n2] { background: hsl(264 80% 50%) }
 				/* Nested, 1 selector style. Possible! But visually busy. */
-				.me { border:none; border-radius: 12px; box-shadow: 0 2px 5px #00000044; padding: 10px 20px; margin: 20px;
+				me { border:none; border-radius: 12px; box-shadow: 0 2px 5px #00000044; padding: 10px 20px; margin: 20px;
 					& span { background: hsl(264 90% 90%); color: hsl(264 30% 40%); padding: 16px 20px; border-radius: 8px; box-shadow: 0 0 5px hsl(0 0% 0% / 20%);
 						&::before { content:'🔮'; padding: 0 1ch 0 0; }
 					}
 				}
 				/* Animations */
-				.me { animation: \.me 2s ease-in-out infinite }
-				@keyframes \.me { /* ♻️ Looped animation @keyframes can be scoped using \ */
+				me { animation: \me 2s ease-in-out infinite }
+				@keyframes \me { /* ♻️ Looped animation @keyframes can be scoped using \ */
 					0% { transform: translateY(0px); }
 					50% { transform: translateY(20px); }
 					100% {  transform: translateY(0px); }
@@ -68,21 +68,21 @@
 		<div>
 			<style>
 				/* Scoped CSS variables work fine! */
-				.me { --color: hsl(264 80% 50%); font-family: sans-serif; margin: 20px }
-				.me div { margin: 20px 0 }
-				.me div ul { margin: 0; padding: 0 }
-				.me div ul li { display: inline-block; width: 110px; text-align: center; background: #444; border-radius: 5px; padding: 10px 2px; margin: 10px 10px }
+				me { --color: hsl(264 80% 50%); font-family: sans-serif; margin: 20px }
+				me div { margin: 20px 0 }
+				me div ul { margin: 0; padding: 0 }
+				me div ul li { display: inline-block; width: 110px; text-align: center; background: #444; border-radius: 5px; padding: 10px 2px; margin: 10px 10px }
 			</style>
 			<h2>Responsive Design 🔛 Resize the window!</h2>
 			🟢 = No breakpoint. Default.
 			<div>
 				<style>
-					.me ul li[n1] { background: var(--color); }
-					@media sm { .me ul li[n2] { background: var(--color); } }
-					@media md { .me ul li[n3] { background: var(--color); } }
-					@media lg { .me ul li[n4] { background: var(--color); } }
-					@media xl { .me ul li[n5] { background: var(--color); } }
-					@media xx { .me ul li[n6] { background: var(--color); } }
+					me ul li[n1] { background: var(--color); }
+					@media sm { me ul li[n2] { background: var(--color); } }
+					@media md { me ul li[n3] { background: var(--color); } }
+					@media lg { me ul li[n4] { background: var(--color); } }
+					@media xl { me ul li[n5] { background: var(--color); } }
+					@media xx { me ul li[n6] { background: var(--color); } }
 				</style>
 				<div>Mobile First (<strong>above</strong> breakpoint)</div>
 				<ul><li n1><strong>🟢 None</strong><li n2>sm<li n3>md<li n4>lg<li n5>xl<li n6>🏁 xx</ul>
@@ -90,7 +90,7 @@
 			<div>
 				<style>
 					/* You can also nest @media styles! */
-					.me ul li {
+					me ul li {
 						&[n1] { background: var(--color); }
 						@media xl- { &[n2] { background: var(--color); } }
 						@media lg- { &[n3] { background: var(--color); } }
@@ -109,15 +109,15 @@
 			<div>Swapped DOM elements are styled instantly when they arrive.</div>
 			<button garlic hx-get="https://gnat.github.io/css-scope-inline/example.html" hx-select="button[garlic]" hx-swap="afterend">
 				<style>
-					.me { margin: 4px; padding: 10px 30px; min-width: 80px; background: hsl(264 80% 47%); border-bottom: 0.5rem solid hsl(264 80% 20%); }
-					.me:hover { background: hsl(264 80% 60%); }
+					me { margin: 4px; padding: 10px 30px; min-width: 80px; background: hsl(264 80% 47%); border-bottom: 0.5rem solid hsl(264 80% 20%); }
+					me:hover { background: hsl(264 80% 60%); }
 				</style>
 				🧄
 			</button>
 			<button vampire hx-get="https://gnat.github.io/css-scope-inline/example.html" hx-select="button[vampire]" hx-swap="afterend">
 				<style>
-					.me { margin: 4px; padding: 10px 30px; min-width: 80px; background: hsl(150 80% 47%); border-bottom: 0.5rem solid hsl(150 80% 28%); }
-					.me:hover { background: hsl(150 80% 60%); }
+					me { margin: 4px; padding: 10px 30px; min-width: 80px; background: hsl(150 80% 47%); border-bottom: 0.5rem solid hsl(150 80% 28%); }
+					me:hover { background: hsl(150 80% 60%); }
 				</style>
 				🧛
 			</button>
