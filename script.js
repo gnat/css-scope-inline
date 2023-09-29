@@ -6,7 +6,7 @@ new MutationObserver(mutations => {
 		if (!node.parentNode) return // Skip if no parent.
 		var scope = 'self__'+(window.cssScopeCount++) // Ready. Make unique scope, example: .self__1234
 		node.parentNode.classList.add(scope)
-		node.textContent = node.textContent.replace(/\.(me|this|self)(?![a-zA-Z])/g, '.'+scope) // Can use: .me .this .self
+		node.textContent = node.textContent.replace(/(^|\.|(?<=\s|[^a-zA-Z0-9\-\_]))(me|this|self)(?![a-zA-Z])/g, '.'+scope) // Can use: me this self
 		node.cssScopeInlineDone = 1
 		// Optional. Responsive design. Mobile First (above breakpoint): 🟢 None sm md lg xl xx 🏁  Desktop First (below breakpoint): 🏁 xs- sm- md- lg- xl- None 🟢
 		node.textContent = node.textContent.replace(/(?:@media)\s(xs-|sm-|md-|lg-|xl-|sm|md|lg|xl|xx)/g, // *- matches must be first!
