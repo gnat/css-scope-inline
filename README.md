@@ -106,6 +106,7 @@ Tailwind verbosity goes up with more child elements.
 ### CSS variables and child styling
 ```html
 <!doctype html>
+<html>
     <head>
         <style>
             :root {
