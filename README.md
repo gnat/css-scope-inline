@@ -11,7 +11,7 @@
 * You wish `this` would work in `<style>` tags.
 * Want all CSS features: [Nesting](https://caniuse.com/css-nesting), animations. Get scoped [`@keyframes`](https://github.com/gnat/css-scope-inline/blob/main/example.html#L86)!
 * You wish `@media` queries were shorter for [responsive design](https://tailwindcss.com/docs/responsive-design).
-* Only 18 lines. No build step. No dependencies.
+* Only 16 lines. No build step. No dependencies.
 * Pairs well with [htmx](https://htmx.org) and [Surreal](https://github.com/gnat/surreal)
 * Want fewer layers, less complexity. Are aware of the cargo cult. ✈️
 
@@ -50,7 +50,7 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 * No more [repeating styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..no [@apply](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>thing]` per style). It's just CSS!
 * No endless visual noise on every `<div>`. Use a local `<style>` per group.
 * No high risk of eventually requiring a build step.
-* No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 18 lines is infinitely maintainable.
+* No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 16 lines is infinitely maintainable.
 * Get the ultra-fast "inspect, play with styles, paste" workflow back.
 * No suffering from FOUC (a flash of unstyled content).
 * Zero friction movement of styles between inline and `.css` files. Just replace `me`
