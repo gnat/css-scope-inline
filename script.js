@@ -1,8 +1,8 @@
 // 🌘 CSS Scope Inline (https://github.com/gnat/css-scope-inline)
 window.cssScopeCount ??= 1 // Let other scripts read the scope count.
 window.cssScope ??= new MutationObserver(mutations => { // Allow 1 observer.
-	document?.body?.querySelectorAll('style:not([data-css-scope])').forEach(node => { // Faster than walking MutationObserver results when recieving subtree (DOM swap, htmx, ajax, jquery).
-		node.dataset.cssScope = node.parentNode.dataset.cssScope ??= (window.cssScopeCount++)
+	document?.body?.querySelectorAll('style:not([data-css-scoped])').forEach(node => { // Faster than walking MutationObserver results when recieving subtree (DOM swap, htmx, ajax, jquery).
+		node.dataset.cssScoped = node.parentNode.dataset.cssScope ??= (window.cssScopeCount++)
 		node.textContent = node.textContent
 		.replace(/((@keyframes\s|animation:|animation-name:)[^{};]*)\bme(?![A-Za-z])/g, `$1css-scope-${node.parentNode.dataset.cssScope}`)
 		.replace(/(^|[^-\w])me(?![-\w])/g, `$1[data-css-scope='${node.parentNode.dataset.cssScope}']`)
