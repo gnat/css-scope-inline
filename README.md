@@ -154,7 +154,6 @@ Tailwind verbosity goes up with more child elements.
     </body>
 </html>
 ```
-
 ## 🔎 Technical FAQ
 * Why do you use `querySelectorAll()` and not just process the `MutationObserver` results directly?
   * Processing `MutationObserver` results will work well until you begin recieving subtrees (ex: DOM swap, [htmx](https://htmx.org), ajax, jquery) which requires you to walk all subtree child elements to not miss a `<style>`. This can involve re-scanning thousands of repeated elements, and `querySelectorAll()` ends up the simplicty and performance winner.
