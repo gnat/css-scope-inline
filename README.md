@@ -41,7 +41,7 @@ This method also leaves your existing styles untouched, allowing you to mix and 
 
 Or, [📥 download](https://raw.githubusercontent.com/gnat/css-scope-inline/main/script.js) into your project, and add `<script src="script.js"></script>` in your `<head>`
 
-Or, 🌐 the CDN: `<script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline/script.js"></script>`
+Or, 🌐 CDN: `<script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>`
 
 ## 🤔 Why consider this over Tailwind CSS?
 
