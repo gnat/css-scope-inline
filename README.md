@@ -107,8 +107,10 @@ Tailwind verbosity goes up with more child elements.
 
 ### CSS variables and child elements
 At first glance, **Tailwind Example 2** looks very promising! Exciting ...but:
-* 🔴 **Every child style requires an explicit selector** - shorthand advantages sadly disappear.
-  * This small example is the best case scenario for Tailwind. Every new child style past this point will be longer than vanilla CSS.
+* 🔴 **Every child style requires an explicit selector.**
+  * Tailwinds' shorthand advantages sadly disappear.
+  * Any more child styles added in Tailwind will become longer than vanilla CSS.
+  * This limited example is the best case scenario for Tailwind.
 * 🔴 Not visible on github: **no highlighting for properties and units** begins to be painful.
 ```html
 <!doctype html>
