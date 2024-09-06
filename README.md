@@ -52,7 +52,7 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 * No high risk of eventually requiring a build step.
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 16 lines is infinitely maintainable.
 * Get the ultra-fast "inspect, play with styles, paste" workflow back.
-* No suffering from a lack of syntax highlighting on properties and units.
+* No suffering from missing syntax highlighting on properties and units.
 * No suffering from FOUC (a flash of unstyled content).
 * Zero friction movement of styles between inline and `.css` files. Just replace `me`
 * No special tooling or plugins to install. Universal vanilla CSS. 
