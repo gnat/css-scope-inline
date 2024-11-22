@@ -47,15 +47,16 @@ Or, 🌐 CDN: `<script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@ma
 
 Use whatever you'd like, but there's a few advantages with this approach over Tailwind, Twind, UnoCSS:
 
-* No more [repeating styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..no [@apply](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>thing]` per style). It's just CSS!
+* No [repeat styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..no [@apply](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>thing]` on each style).
 * No endless visual noise on every `<div>`. Use a local `<style>` per group.
+* No difference in syntax between local and global styles. Universal CSS.
+* Regain your "inspect, play with styles, paste" workflow in your web browser!
+* No suffering from lost syntax highlighting on properties and units.
 * No high risk of eventually requiring a build step.
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 16 lines is infinitely maintainable.
-* Get the ultra-fast "inspect, play with styles, paste" workflow back.
-* No suffering from missing syntax highlighting on properties and units.
 * No suffering from FOUC (a flash of unstyled content).
 * Zero friction movement of styles between inline and `.css` files. Just replace `me`
-* No special tooling or plugins to install. Universal vanilla CSS. 
+* No special tooling or plugins to install.
 
 ## ⚡ Workflow Tips
 
@@ -79,8 +80,8 @@ Tailwind verbosity goes up with more child elements.
     <style>
         me { background: red; }
         me div { background: green; }
-        me div[n1] { background: yellow; }
-        me div[n2] { background: blue; }
+        me [n1] { background: yellow; }
+        me [n2] { background: blue; }
     </style>
     red
     <div>green</div>
