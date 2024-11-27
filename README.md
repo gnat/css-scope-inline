@@ -63,8 +63,8 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 * Flat, 1 selector per line can be very short like Tailwind. See the examples.
 * Use just plain CSS variables in your design system.
 * Use the short `@media` queries for responsive design.
-  * Mobile First (flow: **above** breakpoint): **🟢 None** `sm` `md` `lg` `xl` `xx` 🏁
-  * Desktop First (flow: **below** breakpoint): 🏁 `xs-` `sm-` `md-` `lg-` `xl-` **🟢 None**
+  * Mobile First (flow: **above** breakpoint): **🟢 None (xs)** `sm` `md` `lg` `xl` `xx` 🏁
+  * Desktop First (flow: **below** breakpoint): 🏁 `xs-` `sm-` `md-` `lg-` `xl-` **🟢 None (xx)**
   * 🟢 = No breakpoint. Default. See the [Live Example](https://gnat.github.io/css-scope-inline/example.html)!
   * Based on [Tailwind](https://tailwindcss.com/docs/responsive-design) breakpoints. We use `xx` not `2xl` to not break CSS highlighters.
   * Unlike Tailwind, you can [nest your @media styles](https://developer.chrome.com/articles/css-nesting/#nesting-media)!
