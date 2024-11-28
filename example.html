@@ -74,7 +74,7 @@
 				me div ul li { display: inline-block; width: 110px; text-align: center; background: #444; border-radius: 5px; padding: 10px 2px; margin: 10px 10px }
 			</style>
 			<h2>Responsive Design 🔛 Resize the window!</h2>
-			🟢 = No breakpoint. Default.
+			🟢 = None specified.
 			<div>
 				<style>
 					me ul li[n1] { background: var(--color); }
@@ -84,7 +84,7 @@
 					@media xl { me ul li[n5] { background: var(--color); } }
 					@media xx { me ul li[n6] { background: var(--color); } }
 				</style>
-				<div>Mobile First (<strong>above</strong> breakpoint)</div>
+				<div>📱 Mobile First! Add styles as size <strong>increases</strong>.</div>
 				<ul><li n1><strong>🟢 None</strong><li n2>sm<li n3>md<li n4>lg<li n5>xl<li n6>🏁 xx</ul>
 			</div>
 			<div>
@@ -99,7 +99,7 @@
 						@media xs- { &[n6] { background: var(--color); } }
 					}
 				</style>
-				<div>Desktop First (<strong>below</strong> breakpoint)</div>
+				<div>💻 Desktop First! Add styles as size <strong>decreases</strong>.</div>
 				<ul><li n6>🏁 xs-<li n5>sm-<li n4>md-<li n3>lg-<li n2>xl-<li n1><strong>🟢 None</strong></ul>
 			</div>
 			<br />
