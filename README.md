@@ -47,9 +47,10 @@ Or, 🌐 CDN: `<script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@ma
 
 Use whatever you'd like, but there's a few advantages with this approach over Tailwind, Twind, UnoCSS:
 
-* No [repeat styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..no [@apply](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>thing]` on each style).
-* No endless visual noise on every `<div>`. Use a local `<style>` per group.
-* No difference in syntax between local and global styles. Universal CSS.
+* No [repeated styles](https://tailwindcss.com/docs/reusing-styles) on child elements (..no [@apply](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>thing]` on each style).
+* No repeated prefixes for media queries, hover, focus, etc.
+* No visual noise on every `<div>`. Use a local `<style>` per group.
+* Share syntax between local and external styles. It's just CSS.
 * Regain your "inspect, play with styles, paste" workflow in your web browser!
 * No suffering from lost syntax highlighting on properties and units.
 * No high risk of eventually requiring a build step.
