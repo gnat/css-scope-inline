@@ -1,4 +1,4 @@
-// 🌘 CSS Scope Inline (https://github.com/gnat/css-scope-inline)
+// 🌘 CSS Scope Inline 1.1.0 (https://github.com/gnat/css-scope-inline)
 window.cssScopeCount ??= 1 // Let extra copies share the scope count.
 window.cssScope ??= new MutationObserver(mutations => { // Allow 1 observer.
 	document?.body?.querySelectorAll('style:not([ready])').forEach(node => { // Faster than walking MutationObserver results when recieving subtree (DOM swap, htmx, ajax, jquery).
