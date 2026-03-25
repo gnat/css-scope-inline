@@ -61,17 +61,18 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 ## ⚡ Workflow Tips
 
 * Use vanilla CSS variables for your design system.
-* Flattened `1 rule = 1 line` can be very short like Tailwind. See examples below.
+* Flattened `1 rule = 1 line` can be small like Tailwind. See examples
 * Positional selectors may be easier using `div[n1]` for `<div n1>` (instead of `div:nth-child(1)`)
 * Child combinator can be very useful for granular control. Example: `div>button`
 * Use the short `@media` queries for responsive design.
-  * Based on [Tailwind](https://tailwindcss.com/docs/responsive-design) breakpoints. We use `xx` not `2xl` to not break CSS highlighters.
+  * Based on [Tailwind](https://tailwindcss.com/docs/responsive-design) breakpoints.
+    * We use `xx` not `2xl` to avoid breaking CSS highlighters.
     * Unlike Tailwind, you can [nest your @media styles](https://developer.chrome.com/articles/css-nesting/#nesting-media)!
-  * 🟢 = No breakpoint, default. See the [Live Example](https://gnat.github.io/css-scope-inline/example.html)!
-  * Mobile First (flow: **above** breakpoint)
-    * **🟢 None (xs)** `sm` `md` `lg` `xl` `xx` 🏁
-  * Desktop First (flow: **below** breakpoint)
-    * 🏁 `xs-` `sm-` `md-` `lg-` `xl-` **🟢 None (xx)**
+  * 🟢 = Default, no breakpoint required. See the [Live Example](https://gnat.github.io/css-scope-inline/example.html)!
+  * Mobile First (flows **above** default)
+    * 🟢 **Default** `xs` `sm` `md` `lg` `xl` `xx` 🏁 **End**
+  * Desktop First (flows **below** default)
+    * 🏁 **End** `xs-` `sm-` `md-` `lg-` `xl-` `xx-` 🟢 **Default**
 
 ## 👁️ CSS Scope Inline vs Tailwind CSS Showdowns
 ### Basics
