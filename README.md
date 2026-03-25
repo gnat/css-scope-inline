@@ -33,7 +33,7 @@ See the [Live Example](https://gnat.github.io/css-scope-inline/example.html)! Th
 
 This uses `MutationObserver` to monitor the DOM, and the moment a `<style>` tag is seen, it scopes the styles to whatever the parent element is. No flashing or popping. 
 
-This leaves your existing styles untouched, allowing you to mix and match scoped `<style>` at your leisure.
+This leaves your existing styles untouched. Mix in scoped `<style>` at your leisure.
 
 ## 🎁 Install
 
