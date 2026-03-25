@@ -50,14 +50,13 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
 * No [repeat styles](https://tailwindcss.com/docs/reusing-styles) on child elements (no more [@apply](https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply), no `[&>thing]`).
 * No repeat prefixes for media queries, hover, focus, etc.
 * No visual noise on every `<div>`. Use `<style>` on groups of elements.
-* Share real CSS syntax between inline and external CSS.
+* Share real CSS between inline `<style>` and `.css` files. Just replace `me`
 * Regain your "inspect + edit styles + paste" workflow in your browser!
 * No suffering from lost syntax highlighting on properties and units.
 * No high risk of eventually requiring a build step.
 * No chance of [deprecations](https://windicss.org/posts/sunsetting.html). 16 lines is infinitely maintainable.
 * No suffering from FOUC (a flash of unstyled content).
-* Zero friction movement of styles between inline and `.css` files. Just replace `me`
-* No special tools or plugins to install.
+* No special binaries, no add-ons, no plugins to install.
 
 ## ⚡ Workflow Tips
 
