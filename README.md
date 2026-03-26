@@ -6,7 +6,7 @@
 ## Why does this exist?
 
 * You want an easy inline vanilla CSS experience without Tailwind CSS.
-* Hate creating unique class names over.. and over.. to use once.
+* Hate creating unique class names over and over.. to use once.
 * You want to co-locate your styles for ⚡️ [Locality of Behavior (LoB)](https://htmx.org/essays/locality-of-behaviour/)
 * You wish `this` would work in `<style>` tags.
 * Want all CSS features: [Nesting](https://caniuse.com/css-nesting), animations. Get scoped [`@keyframes`](https://github.com/gnat/css-scope-inline/blob/main/example.html#L50)!
@@ -69,14 +69,13 @@ Use whatever you'd like, but there's a few advantages with this approach over Ta
     * We use `xx` not `2xl` to avoid breaking CSS highlighters.
     * Unlike Tailwind, you can [nest your @media styles](https://developer.chrome.com/articles/css-nesting/#nesting-media)!
   * 🟢 = Default, no breakpoint required. See the [Live Example](https://gnat.github.io/css-scope-inline/example.html)!
-  * Mobile First (flows **above** default)
+  * Mobile First (flows **above** Default)
     * 🟢 **Default** `xs` `sm` `md` `lg` `xl` `xx` 🏁 **End**
-  * Desktop First (flows **below** default)
+  * Desktop First (flows **below** Default)
     * 🏁 **End** `xs-` `sm-` `md-` `lg-` `xl-` `xx-` 🟢 **Default**
 
-## 👁️ CSS Scope Inline vs Tailwind CSS Showdowns
-### Basics
-Tailwind verbosity goes up with more child elements.
+## 👁️ Showdown: CSS Scope Inline vs Tailwind CSS
+### Basic example.
 ```html
 <!-- CSS Scope Inline -->
 <div>
@@ -109,13 +108,13 @@ Tailwind verbosity goes up with more child elements.
 </div>
 ```
 
-### CSS variables and child elements
-At first glance, **Tailwind Example 2** looks very promising! Exciting ...but:
+### Variables and child elements example.
+At first glance, **Tailwind Example 2** looks very promising, but:
 * 🔴 **Every child style requires an explicit selector.**
-  * Tailwinds' shorthand advantages sadly disappear.
-  * Any more child styles added in Tailwind will become longer than vanilla CSS.
+  * Tailwinds' shorthand advantages start to disappear.
+  * Tailwind becomes larger than vanilla CSS when more child elements are added.
   * This limited example is the best case scenario for Tailwind.
-* 🔴 Not visible on github: **no highlighting for properties and units** begins to be painful.
+* 🔴 Not visible on github: **no highlighting for properties and units** becomes painful.
 ```html
 <!doctype html>
 <html>
